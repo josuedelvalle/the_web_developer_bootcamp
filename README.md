@@ -11,6 +11,7 @@ The **Web Developer Bootcamp** is a course on Udemy that covers various topics r
 ## Content
 
 1. **HTML**.
+
    a. The essentials.
 
    > HTML boilerplate | comments | paragraph elements | heading elements | Chrome Inspector | list elements | anchor tags | images.
