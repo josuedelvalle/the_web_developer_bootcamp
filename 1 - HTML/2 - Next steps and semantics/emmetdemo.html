@@ -1,0 +1,84 @@
+<!--
+    Emmet is a plugin for many popular text editors which greatly improves HTML & CSS workflow:
+    - Emmet is built into VS Code
+
+    Here you can find documentation:
+    https://docs.emmet.io/cheat-sheet/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Child: >
+        main>section>h1
+    -->
+    <main>
+        <section>
+            <h1>
+            </h1>
+        </section>
+    </main>
+
+    <!--
+        Sibling: +
+        Elements that are on the same level (not nested)
+        h1+h2+h2
+    -->
+    <h1></h1>
+    <h2></h2>
+    <h2></h2>
+
+    <!--
+        Multiplication: *
+        ul>li*5
+    -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!--
+        Item numbering: $
+        Text: {}
+        nav>ul>li*5>a[href="www.$.com"]{Click Me}
+    -->
+    <nav>
+        <ul>
+            <li><a href="www.1.com">Click Me</a></li>
+            <li><a href="www.2.com">Click Me</a></li>
+            <li><a href="www.3.com">Click Me</a></li>
+            <li><a href="www.4.com">Click Me</a></li>
+            <li><a href="www.5.com">Click Me</a></li>
+        </ul>
+    </nav>
+
+    <!--
+        Climb-up: ^
+        You can use ^ to climb up the tree
+        div>h1+p^section>h2+p
+    -->
+    <div>
+        <h1></h1>
+        <p></p>
+    </div>
+    <section>
+        <h2></h2>
+        <p></p>
+    </section>
+
+    <!--
+        There are more shortcuts.
+        You can find them all in the documentation.
+    -->
+        
+</body>
+</html>

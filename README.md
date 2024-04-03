@@ -10,5 +10,11 @@ The **Web Developer Bootcamp** is a course on Udemy that covers various topics r
 
 ## Content
 
-1. HTML.
-   1. The essentials.
+1. **HTML**.
+   a. The essentials.
+
+   > HTML boilerplate | comments | paragraph elements | heading elements | Chrome Inspector | list elements | anchor tags | images.
+
+   b. Next steps and semantics.
+
+    > HTML5 | 'div' and 'span' | 'hr', 'br', 'sup' and 'sub' | entity codes | Semantic Markup | Emmet VS Code extension
