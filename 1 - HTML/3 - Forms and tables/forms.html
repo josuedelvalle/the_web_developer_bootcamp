@@ -1,0 +1,52 @@
+<!--
+    The Form element is used to create an HTML form for user input.
+    Examples of form elements include text fields, checkboxes, radio buttons, submit buttons, etc.
+
+    Some attributes:
+    - action - specifies where to send the form-data when the form is submitted.
+        The request can point to a page on the same server or on a different server.
+    - method - specifies the HTTP method to use when sending form-data.
+
+    When you submit a form, a HTTP request is sent and we control where that request goes with the action attribute.
+
+    You can find more infor here:
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+-->
+
+<!--
+    Most common element:
+    - <input> - defines an input field where the user can enter data.
+        The input types are: text, password, submit, reset, radio, checkbox, etc. It is extremely versatile.
+            + The 'type' attribute dramatically alters the input's behaviour and appearance.
+            + The 'placeholder' attribute provides a hint to the user of what can be entered in the field.
+              Is the text that appears in the input field when it is empty.
+    
+    With the input element we can get quite a variety of different types of inputs or form controls.
+    More info here:
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+<body>
+    <h1>Forms Demo</h1>
+
+    <!-- Form -->
+    <!-- The action attribute specifies where to send the form-data -->
+    <form action="/tacos">
+        <!-- Input field -->
+        <input type="text" placeholder="username"> <!-- Text input field -->
+        <input type="password" placeholder="Enter your password"> <!-- Password input field -->
+        <input type="color">  <!-- Color input field -->
+        <input type="number" placeholder="Enter a number"> <!-- Number input field -->
+        <input type="time"> <!-- Time input field -->
+    </form> 
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!--
+    Table basic ELEMENTS:
+    - <table> - defines a table
+    - <tr> - defines a row in a table
+    - <td> - defines a cell in a table
+    - <th> - defines a header cell in a table
+
+    Later with CSS we can alter the table's appearance: sizes, colors, spacing, borders, etc.
+-->
+
+<!--
+    Table ELEMENTS to section the table:
+    - <thead> - groups the header content in a table
+    - <tbody> - groups the body content in a table
+    - <tfoot> - groups the footer content in a table
+    
+    This elements break the table into logical sections where we can this is the table header, this is the table body, this is the table footer.
+    We can have more than one <tbody> in a table, but only one <thead> and <tfoot> are allowed.
+    But we can have multiple <tr> in a <thead> or <tbody> or <tfoot> elements.
+
+    The advantage of using these elements is that we can style them differently with CSS,
+    and we can also use them to make the table more accessible to screen readers.
+
+    Follow best practices.
+-->
+
+<!--
+    Table ATTRIBUTES to span cells to have a cell span multiple columns or rows:
+    colspan - attribute specifies the number of columns a cell should span
+    rowspan - attribute specifies the number of rows a cell should span
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heaviest Birds Table</title>
+  </head>
+  <body>
+    <h1>Heaviest Birds</h1>
+
+    <!-- Table -->
+    <table>
+      <!-- Table header -->
+      <thead>
+        <!-- Table header row -->
+        <tr>
+          <!-- Table header cell -->
+          <th>Animal</th>
+          <th>Average mass [kg]</th>
+          <th>Maximum mass [kg]</th>
+          <th>Flighted</th>
+        </tr>
+      </thead>
+      <!-- Table body -->
+      <tbody>
+        <!-- Table row -->
+        <tr>
+          <!-- Table cell -->
+          <td>Ostrich</td>
+          <td>104</td>
+          <td>156.8</td>
+          <td>No</td>
+        </tr>
+        <!-- Another table row -->
+        <tr>
+          <td>Somali Ostrich</td>
+          <td>90</td>
+          <td>130</td>
+          <td>No</td>
+        </tr>
+        <!-- Another table row -->
+        <tr>
+          <td>Wild Turkey</td>
+          <td>13.5</td>
+          <td>39</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <!-- Table with cell spanning -->
+    <table>
+      <!-- Table header -->
+      <thead>
+        <!-- Table header row -->
+        <tr>
+          <!-- Table header cell -->
+          <th rowspan="2">Animal</th>
+          <!-- span 2 rows. It takes 2 full rows -->
+          <th colspan="2">Average Mass</th>
+          <!-- span 2 columns. It takes 2 full columns -->
+          <th rowspan="2">Flighted</th>
+        </tr>
+        <tr>
+          <th>kg</th>
+          <th>lb</th>
+        </tr>
+      </thead>
+      <!-- Table body -->
+      <tbody>
+        <!-- Table row -->
+        <tr>
+          <!-- Table cell -->
+          <td>Ostrich</td>
+          <td>104</td>
+          <td>230</td>
+          <td>No</td>
+        </tr>
+        <!-- Another table row -->
+        <tr>
+          <td>Somali Ostrich</td>
+          <td>90</td>
+          <td>200</td>
+          <td>No</td>
+        </tr>
+        <!-- Another table row -->
+        <tr>
+          <td>Wild Turkey</td>
+          <td>13.5</td>
+          <td>28.9</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
