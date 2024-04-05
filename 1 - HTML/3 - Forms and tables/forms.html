@@ -14,7 +14,7 @@
 -->
 
 <!--
-    Most common element:
+    Most common Form element:
     - <input> - defines an input field where the user can enter data.
         The input types are: text, password, submit, reset, radio, checkbox, etc. It is extremely versatile.
             + The 'type' attribute dramatically alters the input's behaviour and appearance.
@@ -26,27 +26,164 @@
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 -->
 
+<!--
+    Make sure your inputs are label properly.
+
+    Labels are used to describe the purpose of the input field.
+    The 'for' attribute of the label element should be equal to the 'id' attribute of the input element.
+    This way, when the user clicks on the label, the input field is activated.
+    
+    The id attribute is used to associate the label with the input field.
+    Now, when the user clicks on the label, the input field is activated.
+
+    More info here: 
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+-->
+
+<!--
+    Button element:
+    - <button> - defines a clickable button.
+        The button element is used to create a clickable button.
+        Inside a button element you can put text (and images) and you can also add event handlers.
+        The button element represents a clickable button, which can be used in forms or anywhere in a document that needs simple, standard button functionality.
+        By default, HTML buttons are presented in a style resembling the platform the user agent runs on, but you can change buttons' appearance with CSS.
+        The button element is a container for phrasing content, whereas the input element is a self-contained element.
+
+    In case for the form, the button element will take the action attribute of the form element.
+    The button is sending a request to the server because I am submitting the form.
+
+    When I have a button in a form and I don't explicity say this should not submit the form, it is going to submit the form.
+    For this we can use the 'type' attribute with the value 'button' to avoid the form submission. By default, the type attribute has the value 'submit'.
+-->
+
+<!--
+    The name attribute is used to identify form data after it has been submitted to the server.
+    One value could be 'q' for a search query, or 'username' for a username input field.
+
+    Example: <input type="text" name="username" />
+    
+    More info here: 
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-name
+-->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms Demo</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Forms Demo</h1>
+    <h2>Our First Form</h2>
 
     <!-- Form -->
     <!-- The action attribute specifies where to send the form-data -->
     <form action="/tacos">
+      <p>
+        <!-- Label -->
+        <!-- Label for the input field -->
+        <label for="username">Enter a Username:</label>
         <!-- Input field -->
-        <input type="text" placeholder="username"> <!-- Text input field -->
-        <input type="password" placeholder="Enter your password"> <!-- Password input field -->
-        <input type="color">  <!-- Color input field -->
-        <input type="number" placeholder="Enter a number"> <!-- Number input field -->
-        <input type="time"> <!-- Time input field -->
-    </form> 
+        <!-- Text input field -->
+        <!-- 
+            Here we set the name attribute to 'username', so when we submit the form, the data will be sent with the name 'username' 
+            This will be the resquest: /tacos?username=the_value_of_the_input
+        -->
+        <input id="username" type="text" placeholder="username" name="username" />
+      </p>
 
-</body>
+      <p>
+        <!-- Label -->
+        <label for="password">Enter a Password:</label>
+        <!-- Password input field -->
+        <!-- The name attribute is set to 'password' -->
+        <input type="password" placeholder="password" id="password" name="password" />
+      </p>
+
+      <p>
+        <!-- Label -->
+        <label for="color">Enter a Color:</label>
+        <!-- Color input field -->
+        <input type="color" id="color" name="color" />
+      </p>
+
+      <p>
+        <!-- Label -->
+        <label for="number">Enter a Number:</label>
+        <!-- Number input field -->
+        <input type="number" placeholder="enter a number" id="number" name="num" />
+      </p>
+
+      <p>
+        <!-- Label -->
+        <label for="time">Enter a Time:</label>
+        <!-- Time input field -->
+        <input type="time" id="time" name="time" />
+      </p>
+
+      <!-- Buttons -->
+      <!-- This button doesn't submit the form b/c of the "type" attribute -->
+      <button type="button">Regular button (won't submit)</button>
+      <!-- This button submits the form! -->
+      <button>Submit</button>
+      <!-- Another way to create a button (but not good syntax) -->
+      <input type="submit" value="Click Me!" />
+    </form>
+
+    <!--
+        If we fill all the form fields the request will be:
+        /tacos?username=the_value_of_the_input&password=the_value_of_the_input&color=the_value_of_the_input&num=the_value_of_the_input&time=the_value_of_the_input
+    -->
+
+    <hr />
+    
+    <!--
+        This button is outside the form, so it is not going to submit the form.
+        We could use JavaScript to do something when the button is clicked.
+    -->
+    <button>Button outside the form</button>
+    
+    <h2>Hijacking Searches</h2>
+
+    <p>
+        Now we are going to build our own search form for Reddit, Google and Youtube
+        where we can send data to their server from our form and end up
+        actually getting a search result.
+    </p>
+    <p>
+        We need to take advantage of the 'action' attribute of the form element,
+        and make sure we <b>follow the correct URL structure for the search query</b>.
+    </p>
+    
+    <!-- Reddit Search Form -->
+    <form action="https://www.reddit.com/search">
+        <input type="text" name="q">
+        <button>Search Reddit</button>
+    </form>
+
+    <!-- Google Search Form -->
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+
+    <!-- Youtube Search Form -->
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>Search Youtube</button>
+    </form>
+
+    <p>
+        There is no need to have a button in the form to submit the form.
+        We can just press the 'Enter' key on the keyboard to submit the form.
+    </p>
+
+    <!-- Youtube Search Form -->
+    <form action="https://www.youtube.com/results">
+        <label for="youtube">Search on Youtube:</label>
+        <input type="text" name="search_query" id="youtube">
+    </form>
+
+  </body>
 </html>
