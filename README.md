@@ -22,4 +22,4 @@ The **Web Developer Bootcamp** is a course on Udemy that covers various topics r
 
    c. [Forms and tables](/1%20-%20HTML/3%20-%20Forms%20and%20tables/). 
 
-    > Table elements | Form elements | Labels | Buttons | The name attribute
+    > Table elements | Form elements | Labels | Buttons | The name attribute | Input types - text, password, color, number, time, radio buttons, checkboxes, range, email, url | Select | Text area | Form Validation

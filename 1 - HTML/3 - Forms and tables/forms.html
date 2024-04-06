@@ -20,7 +20,13 @@
             + The 'type' attribute dramatically alters the input's behaviour and appearance.
             + The 'placeholder' attribute provides a hint to the user of what can be entered in the field.
               Is the text that appears in the input field when it is empty.
-    
+        Common input types:
+            + text - A single-line text field.
+            + password - A text field for the user's password.
+            + color - A control for specifying a color.
+            + number - A control for entering a number.
+            + time - A control for entering a time.
+
     With the input element we can get quite a variety of different types of inputs or form controls.
     More info here:
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
@@ -66,6 +72,76 @@
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-name
 -->
 
+<!--
+    Other input types:
+    - checkbox - A checkbox allows the user to select multiple options from a set.
+      It is really important to have a label for the checkbox.
+      We have control over if the checkbox is checked or not by using the 'checked' attribute.
+      Example: <input type="checkbox" name="vehicle1" value="Bike" checked> I have a bike
+  
+    - radio - A radio button allows the user to select only one option from a set.
+      It is really important to have a label for the radio button.
+      + With the 'value' attribute, when we submit the form, the value of the selected radio button will be sent
+        and it will appear in the request. It has to be unique.
+      
+      - range - A control for entering a number whose exact value is not important.
+        It is like a slider.
+        Attributes:
+          + min - specifies the minimum value allowed.
+          + max - specifies the maximum value allowed.
+          + step - specifies the legal number intervals for the input field.
+-->
+
+<!--
+  Select:
+  The select element is used to create a drop-down list.
+  The <option> tags inside the select element define the available options in the list.
+  The value of the selected option will be sent in the request.
+  The first option is a placeholder, so the user knows what to do.
+    + With the attribute 'selected' we can set the default value of the select element.
+  Example:
+    <select>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes" selected>Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+-->
+
+<!--
+  Text Area:
+  A text area is used to create a multi-line text input field.
+  This are not inputs, they are text areas, with opening and closing tags.
+    + The rows attribute specifies the visible number of lines in a text area.
+    + The cols attribute specifies the visible width of a text area.
+    + The name attribute is used to identify form data after it has been submitted to the server.
+-->
+
+<!--
+  Form Validations:
+  The term validation generally refers to adding checks to ensure that the data entered by the user is correct.
+  For example, requiring that a field be filled out, or that a field only contains numbers.
+  They can get more complex like checking if an email is valid, or if a password is strong enough.
+
+  There is something called server-side validation, where the server checks the data that was sent to it.
+
+  We are going to focus now on the basic of the built-in HTML form validation.
+  Attributes: 
+    - required - specifies that an input field must be filled out before submitting the form.
+    - minlength - specifies the minimum number of characters required in an input field.
+    - maxlength - specifies the maximum number of characters allowed in an input field.
+    - min/max - specifies the minimum/maximum value allowed for an input field, for numerical values.
+      It could be used for things like in a date, number, range, time, etc.
+      More info here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-min
+    
+  We have some inputs that have built-in validation, like the email input type.
+  They are matching a pattern, so if the pattern is not matched, the form will not be submitted.
+  Another attribute is 'pattern':
+    - pattern is a attribute that specifies a regular expression that the input element's value is checked against.
+      If the value doesn't match the pattern, the form can't be submitted.
+      More info here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-pattern
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,7 +166,12 @@
             Here we set the name attribute to 'username', so when we submit the form, the data will be sent with the name 'username' 
             This will be the resquest: /tacos?username=the_value_of_the_input
         -->
-        <input id="username" type="text" placeholder="username" name="username" />
+        <input
+          id="username"
+          type="text"
+          placeholder="username"
+          name="username"
+        />
       </p>
 
       <p>
@@ -98,7 +179,12 @@
         <label for="password">Enter a Password:</label>
         <!-- Password input field -->
         <!-- The name attribute is set to 'password' -->
-        <input type="password" placeholder="password" id="password" name="password" />
+        <input
+          type="password"
+          placeholder="password"
+          id="password"
+          name="password"
+        />
       </p>
 
       <p>
@@ -112,7 +198,12 @@
         <!-- Label -->
         <label for="number">Enter a Number:</label>
         <!-- Number input field -->
-        <input type="number" placeholder="enter a number" id="number" name="num" />
+        <input
+          type="number"
+          placeholder="enter a number"
+          id="number"
+          name="num"
+        />
       </p>
 
       <p>
@@ -137,59 +228,258 @@
     -->
 
     <hr />
-    
+
     <!--
         This button is outside the form, so it is not going to submit the form.
         We could use JavaScript to do something when the button is clicked.
     -->
     <button>Button outside the form</button>
-    
+
     <h2>Hijacking Searches</h2>
 
     <p>
-        Now we are going to build our own search form for Reddit, Google and Youtube
-        where we can send data to their server from our form and end up
-        actually getting a search result.
+      Now we are going to build our own search form for Reddit, Google and
+      Youtube where we can send data to their server from our form and end up
+      actually getting a search result.
     </p>
     <p>
-        We need to take advantage of the 'action' attribute of the form element,
-        and make sure we <b>follow the correct URL structure for the search query</b>.
+      We need to take advantage of the 'action' attribute of the form element,
+      and make sure we
+      <b>follow the correct URL structure for the search query</b>.
     </p>
 
     <h3>Search Reddit</h3>
-    
+
     <!-- Reddit Search Form -->
     <form action="https://www.reddit.com/search">
-        <input type="text" name="q">
-        <button>Search Reddit</button>
+      <input type="text" name="q" />
+      <button>Search Reddit</button>
     </form>
 
     <h3>Search Google</h3>
 
     <!-- Google Search Form -->
     <form action="https://www.google.com/search">
-        <input type="text" name="q">
-        <button>Search Google</button>
+      <input type="text" name="q" />
+      <button>Search Google</button>
     </form>
 
     <h3>Search Youtube</h3>
 
     <!-- Youtube Search Form -->
     <form action="https://www.youtube.com/results">
-        <input type="text" name="search_query">
-        <button>Search Youtube</button>
+      <input type="text" name="search_query" />
+      <button>Search Youtube</button>
     </form>
 
     <p>
-        There is no need to have a button in the form to submit the form.
-        We can just press the 'Enter' key on the keyboard to submit the form.
+      There is no need to have a button in the form to submit the form. We can
+      just press the 'Enter' key on the keyboard to submit the form.
     </p>
 
     <!-- Youtube Search Form -->
     <form action="https://www.youtube.com/results">
-        <label for="youtube">Search on Youtube:</label>
-        <input type="text" name="search_query" id="youtube">
+      <label for="youtube">Search on Youtube:</label>
+      <input type="text" name="search_query" id="youtube" />
     </form>
 
+    <h3>Search freeCodeCamp</h3>
+
+    <!-- freeCodeCamp Search Form -->
+    <form action="https://www.freecodecamp.org/news/search/">
+      <label for="fcc">Search on freeCodeCamp:</label>
+      <input type="text" name="query" id="fcc" />
+    </form>
+
+    <h2>More Inputs</h2>
+
+    <h3>Checkboxes</h3>
+
+    <form action="/birds">
+      <p>
+        <!-- Checkbox already checked -->
+        <input type="checkbox" name="agree_tos" id="agree" checked />
+        <label for="agree">I agree to everything (already checked)</label>
+      </p>
+
+      <p>
+        <!-- Checkbox not checked -->
+        <input type="checkbox" name="agree_tos" id="agree2" />
+        <label for="agree2">I agree to everything</label>
+      </p>
+
+      <!--
+        If you dont check the checkbox, the request will not include the checkbox data.
+      -->
+
+      <button>Submit</button>
+    </form>
+
+    <h3>Radio Buttons</h3>
+
+    <form action="/birds">
+      <p>
+        <!-- Radio button -->
+        <!--
+          If we set the same 'name' attribute for the radio buttons, only one of them can be selected.
+          The value of the selected radio button will be sent in the request, instead of 'on'.
+        -->
+        <label for="xs">XS:</label>
+        <input type="radio" name="size" id="xs" value="xs" checked />
+        <!-- Line break -->
+        <br />
+        <label for="s">S:</label>
+        <input type="radio" name="size" id="s" value="s" />
+        <br />
+        <label for="m">M:</label>
+        <input type="radio" name="size" id="m" value="m" />
+      </p>
+      <button>Submit</button>
+    </form>
+
+    <h3>Range</h3>
+
+    <form action="/birds">
+      <!-- Range element -->
+      <p>
+        <label for="volume">Set the volume:</label>
+        <input type="range" id="volume" name="vol_level" min="0" max="100" />
+      </p>
+      <p>
+        <label for="cheese">Amount of cheese:</label>
+        <input
+          type="range"
+          id="cheese"
+          name="cheese_level"
+          min="0"
+          max="100"
+          step="10"
+        />
+      </p>
+      <button>Submit</button>
+    </form>
+
+    <h3>Numbers</h3>
+
+    <p>
+      We can also set a minimum and maximum value for the number input field.
+    </p>
+    <form action="">
+      <!-- Number element -->
+      <p>
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5" />
+      </p>
+      <button>Submit</button>
+    </form>
+
+    <h2>Selects</h2>
+
+    <form action="/birds">
+      <!-- Select element -->
+      <p>
+        <label for="meal">Please select an entree </label>
+        <select name="meal" id="meal">
+          <!-- Options -->
+          <!-- 
+            The value of the selected option will be sent in the request.
+            Sometime the first option is a placeholder, so the user knows what to do.
+          -->
+          <option value="">Please choose an option</option>
+          <option value="fish">Fish</option>
+          <option value="veg">Vegetarian</option>
+          <option value="steak">Steak</option>
+        </select>
+      </p>
+      <button>Submit</button>
+    </form>
+
+    <h2>Text Area</h2>
+
+    <form action="/birds">
+      <!-- Text area -->
+      <p>
+        <label for="request">Any special request?</label>
+        <br />
+        <textarea
+          name="request"
+          id="request"
+          cols="40"
+          rows="10"
+          placeholder="Enter your request here..."
+        ></textarea>
+      </p>
+      <button>Submit</button>
+    </form>
+
+    <h2>Form Validations</h2>
+
+    <form action="/dummy">
+      <label for="First">Enter First Name</label>
+      <!-- 
+        The 'required' attribute specifies that the input field must be filled out before submitting the form.
+      -->
+      <input type="text" name="first" id="first" required />
+      <p>
+        <label for="username">Username</label>
+        <!-- 
+          The 'minlength' attribute specifies the minimum number of characters required in an input field.
+          The 'maxlength' attribute specifies the maximum number of characters allowed in an input field.
+        -->
+        <input
+          type="text"
+          name="username"
+          id="username"
+          minlength="4"
+          maxlength="20"
+          required
+        />
+      </p>
+      <button>Submit</button>
+    </form>
+
+    <h3>Email</h3>
+
+    <form action="/dummy">
+      <p>
+        <label for="email">Email</label>
+        <!-- 
+          The 'type' attribute with the value 'email' is a built-in validation.
+          Its not checking if the email is real, but if it is in the correct format.
+        -->
+        <input type="email" name="email" id="email" required />
+        <br />
+        <!-- The 'pattern' attribute specifies a regular expression that the input element's value is checked against. -->
+        <label for="email2">Email with pattern attribute</label>
+        <input
+          type="email"
+          name="email"
+          id="email2"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required
+        />
+      </p>
+
+      <button>Submit</button>
+    </form>
+
+    <h3>URL</h3>
+
+    <form action="">
+      <p>
+        <label for="url">URL</label>
+        <!-- 
+          The 'type' attribute with the value 'url' is a built-in validation.
+          The 'pattern' attribute specifies a regular expression that the input element's value is checked against.
+        -->
+        <input type="url" name="url" id="url" required />
+        <br />
+        <label for="url2">URL with pattern attribute</label>
+        <input type="url" name="url" id="url2" pattern="https://.*" required />
+      </p>
+
+      <button>Submit</button>
+    </form>
+    
   </body>
 </html>
