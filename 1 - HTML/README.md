@@ -17,6 +17,7 @@ HTML, CSS, and JavaScript are three fundamental technologies used in web develop
 
 HTML, CSS, and JavaScript work together to create a seamless user experience on the web. They enable developers to build visually appealing, responsive, and interactive websites and web applications. **Understanding the importance of HTML is crucial because it forms the foundation upon which the other technologies are built**. Without HTML, there would be no structure or content to style and manipulate using CSS and JavaScript.HTML, CSS, and JavaScript are three fundamental technologies used in web development. They work together to create dynamic and interactive web pages.
 
+---
 
 The HTML content is divided into three sections:
 

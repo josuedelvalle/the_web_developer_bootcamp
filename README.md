@@ -11,3 +11,4 @@ The **Web Developer Bootcamp** is a course on Udemy that covers various topics r
 ## Content
 
 1. **[HTML](/1%20-%20HTML/)**.
+2. **[CSS](/2%20-%20CSS/)**.

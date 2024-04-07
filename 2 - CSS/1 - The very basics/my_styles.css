@@ -1,0 +1,28 @@
+/* 
+Basic CSS properties:
+
+- color: color of the text. 
+You can use color names, hex values, rgb, rgba, hsl, hsla.
+
+- background-color: color of the background
+*/
+
+
+/* h3 element */
+h3 {
+    /* color property */
+    color: teal;
+    /* background-color property */
+    background-color: plum;
+}
+
+/* button element */
+button {
+    color: magenta;
+    background-color: cyan;
+}
+
+/* paragrah element */
+p {
+    color: olive;
+}

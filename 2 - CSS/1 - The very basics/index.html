@@ -1,0 +1,106 @@
+<!-- 
+    You can wirte your styles directly INLINE on each element,
+    but this is not recommended, because it's not scalable.
+
+    For example, like this:
+        <h1 style="color: purple">Hello World</h1>
+
+    A better way is to use the 'style' element.
+    You can write your styles inside of a 'style' element.
+    This is easy, but not recommended for larger projects,  because
+    it makes it impossible to share styles between documents.
+    The 'style' element always goes in the 'head' of your HTML document.
+
+
+    The best way is to use an external CSS file.
+    Write your styles in a .css file and the include the using a 'link' element
+    in the 'head' of your HTML document.
+    These 'link' tags always go in the 'head' of your HTML document, they are
+    metadata information about the document.
+    Example:
+        <link rel="stylesheet" href="my_styles.css" />
+-->
+
+<!--
+    Basic CSS properties:
+
+    - color: color of the text. 
+    You can use color names, hex values, rgb, rgba, hsl, hsla.
+    
+    - background-color: color of the background. 
+    You can use color names, hex values, rgb, rgba, hsl, hsla.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Intro</title>
+
+    <!--
+        STYLE ELEMENT - NOT RECOMMENDED
+        Create a style element and write your styles inside of it.
+    
+        <style>
+        h2 {
+            color: palevioletred;
+        }
+            button {
+                background-color: lightblue;
+            }
+        </style>
+    -->
+
+    <!--
+        LINK ELEMENT - RECOMMENDED
+        Include an external CSS file using a link element.
+    -->
+    <link rel="stylesheet" href="my_styles.css" />
+
+  </head>
+  <body>
+
+    <!-- 
+        INLINE STYLES - NOT RECOMMENDED
+        It is impossible to share styles between elements and documents.
+
+        Impossible to share the button style to another button.
+        You have to copy and paste the style to the other button.
+    
+        <h1 style="color: purple">Hello World</h1>
+        <button style="background-color: palegreen;">I AM A BUTTON</button>
+        <button>ANOTHER BUTTON</button>
+    -->
+
+    <!-- 
+        STYLE ELEMENT - NOT RECOMMENDED
+        Now, the styles are shared between elements in the same document,
+        but it is impossible to share styles between documents.
+    
+        <h2>I am a H2 modified with style element (1)</h2>
+        <h2>I am a H2 modified with style element (2)</h2>
+        <h2>I am a H2 modified with style element (3)</h2>
+    -->
+    
+
+    <!--
+        LINK ELEMENT - RECOMMENDED
+        Now, the styles are shared between elements in the same document,
+        and it is possible to share styles between documents.
+    -->
+    <h3>I am a H3 modified with link element (1)</h3>
+    <h3>I am a H3 modified with link element (2)</h3>
+    <h3>I am a H3 modified with link element (3)</h3>
+
+    <button>Button 1</button>
+    <button>Button 1</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur delectus quasi, error voluptatibus a nisi beatae! Culpa at aperiam quia quasi ea dolor nulla consectetur aliquid, et, harum omnis.
+        Expedita possimus magnam quisquam reprehenderit neque iure debitis impedit distinctio saepe tempora excepturi amet eveniet officia voluptatem, exercitationem, repudiandae unde vitae sint quia laborum accusantium. Vero delectus totam veniam voluptas?
+        Error, officia tempora? Ipsam commodi nisi doloribus, corporis porro quo rerum deserunt id eos aperiam iusto labore necessitatibus impedit aliquid voluptates a doloremque. Facilis, mollitia? Amet cupiditate voluptate totam facere.
+    </p>
+
+  </body>
+</html>
