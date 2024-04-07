@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+</head>
+<body>
+    <h1>Race Registration</h1>
+
+    <form action="">
+        <div>
+            <!-- text input -->
+            <!-- for accessibility purposes, always include labels -->
+            <label for="first">First Name</label>
+            <input type="text" id="first" name="firstname" required>
+            <label for="last">Last Name</label>
+            <input type="text" id="last" name="lastname" required>
+        </div>
+        
+        <p>Select a Race:</p>
+        <div>
+            <!-- radio buttons grouped together by the name attribute -->
+            <!-- dont forget the value attribute. This is what is sent to the server -->
+            <!--
+                in general, authors are encouraged to avoid having radio button groups that 
+                do not have any initially checked controls in the first place, as this is 
+                a state that the user cannot return to, and is therefore generally considered 
+                a poor user interface.
+
+                so, you should have one of the radio buttons checked by default
+
+                also, if you want this radio button group to be required, you should add the required attribute
+                to one of the radio buttons. This will make the radio button group required.
+
+                https://html.spec.whatwg.org/multipage/input.html#radio-button-group
+            -->
+            <input type="radio" name="race" id="funrun" value="funrun" required>
+            <!-- you are not supposed to have an id that starts with a number -->
+            <label for="fiverun">Fun Run 5k</label>
+        </div>
+        <div>
+            <input type="radio" name="race" id="half" value="half" checked>
+            <label for="half">Half Marathon</label>
+        </div>
+        <div>
+            <input type="radio" name="race" id="full" value="full">
+            <label for="full">Full Marathon</label>
+        </div>
+
+        <div>
+            <!-- email -->
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <!-- password -->
+            <label for="password">Password</label>
+            <input type="password" name="password" id="passwrd" required>
+        </div>
+
+        <div>
+            <!-- select dropdown -->
+            <label for="division">Select Age Group</label>
+            <select name="division" id="division">
+                <option value="kids">under 18</option>
+                <option value="young">18-30</option>
+                <option value="adults">30-50</option>
+                <option value="seniors">50+</option>
+            </select>
+        </div>
+
+        <button>Register</button>
+        
+    </form>
+</body>
+</html>
