@@ -7,22 +7,51 @@ You can use color names, hex values, rgb, rgba, hsl, hsla.
 - background-color: color of the background
 */
 
+/*
+For color names, you can find here a good documentation:
+https://htmlcolorcodes.com/color-names/
+
+Some color names examples:
+- hotpink
+- gold
+- tomato
+- lightskyblue
+- darkkhaki
+- ...
+
+There are other systems to define colors:
+- RGB: red, green, blue. Each value goes from 0 to 255.
+    Example: rgb(255, 0, 0) is red / rgb(128, 128, 128) is gray
+- HEX: hexadecimal. Each value goes from 00 to FF.
+    Example: #FF0000 is red / #808080 is gray
+    If the three values are the same, you can use a shorthand notation --> #RRGGBB = #RGB 
+       + For example, #FF00CC = #F0C
+*/
+
 
 /* h3 element */
 h3 {
     /* color property */
-    color: teal;
+    /* color name */
+    color: teal; 
     /* background-color property */
-    background-color: plum;
+    /* rgb value */
+    background-color: rgb(255, 169, 169); 
 }
 
 /* button element */
 button {
-    color: magenta;
+    /* hex value */
+    color: #0f5679; 
     background-color: cyan;
 }
 
 /* paragrah element */
 p {
     color: olive;
+}
+
+/* body element */
+body {
+    background-color: #e4cccc;
 }
