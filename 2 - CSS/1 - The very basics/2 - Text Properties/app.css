@@ -1,0 +1,115 @@
+/*
+Some CSS Properties:
+
+- text-align: aligns the text in the element. 
+    + Possible values: left, right, center, justify.
+
+- font-weight: sets the weight of the font. 
+    + Possible values: normal, bold, bolder, lighter, 100, 200, 300, 400 (normal), 500, 600, 700 (bold), 800, 900.
+
+- text-decoration: adds a decoration to the text. 
+    + Possible values: none, underline, overline, line-through.
+    + We can specify the color, indicating it before the value (e.g. 'blue underline').
+    + We can also set the line style (e.g. 'underline dotted').
+    + We can also set the line width (e.g. 'underline 2px').
+    + But we can set text-decoration to none to remove the decoration (e.g. for anchor elements).
+
+- line-height: sets the height of a line of text. 
+    + You can use a number or a percentage. By default, it is 1.2.
+
+- font-size: sets the size of the font. 
+    + You can use pixels, em, rem, percentages, etc.
+    + Some values: xx-small, x-small, small, medium, large, x-large, xx-large.
+    + Relative units: em, rem, %.
+    + Absolute units: px, pt, cm, in.
+        * px is the most common unit for font-size. Not recommended for responsive design.
+
+- line-height: sets the height of a line of text. 
+    + You can use a number or a percentage.
+
+- letter-spacing: sets the space between characters. 
+    + You can use pixels, em, rem, percentages, etc.
+
+- text-transform: transforms the text. 
+    + Possible values: none, uppercase, lowercase, capitalize.
+
+Please, refer to the MDN documentation for more information:
+https://developer.mozilla.org/en-US/docs/Web/CSS
+*/
+
+/* 
+Font Family CSS property:
+    - font-family: sets the font of the text.
+    - You can use a font name, a generic family, or a list of fonts.
+    - If the font name has spaces, you should put it between quotes.
+    - If the font name is not found, the browser will use the next font in the list.
+    - If the font name is not found and there is no more fonts in the list, the browser will use the default font.
+    - Generic families: serif, sans-serif, monospace, cursive, fantasy.
+    - Example: font-family: 'Times New Roman', Times, serif;
+
+Google Fonts:
+    - You can use Google Fonts to add custom fonts to your website.
+    - Go to https://fonts.google.com/ and choose a font.
+    - Click on the '+' icon to add the font to your collection.
+    - Click on the 'Family Selected' bar at the bottom of the screen.
+    - Copy the link tag and paste it in the head of your HTML file.
+    - Copy the font-family property and paste it in your CSS file.
+    - Example: font-family: 'Roboto', sans-serif;
+
+Font Awesome:
+    - You can use Font Awesome to add icons to your website.
+    - Go to https://fontawesome.com/ and choose an icon.
+    - Click on the icon and copy the HTML code.
+    - Paste the HTML code in your HTML file.
+    - Example: <i class="fas fa-camera-retro"></i>
+
+Generic Families:
+    - You can also use generic families.
+    - These are not specific fonts, but a family of fonts.
+    - For example:
+        + serif
+        + sans-serif
+        + monospace
+        + cursive
+        + fantasy
+        ...
+
+Please, refer to the MDN documentation for more information:
+https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+
+Here you can see a list of the most popular fonts:
+https://www.cssfontstack.com/
+*/
+
+h1 {
+    /* align text to the center of the element */
+    text-align: center;
+    /* bold text */
+    font-weight: 700; 
+    /* custom color/style underline */
+    text-decoration: #f78120 underline wavy;
+    /* letter spacing of 10px - space between characters */
+    letter-spacing: 15px;
+    /* font size */
+    font-size: 60px;
+    /* uppercase text */
+    text-transform: uppercase;
+
+    /* font family */
+    /* In this case, Futura and Arial are the backup fonts */
+    /* Because mac users don't have Segoe UI, they will see Futura */
+    /* If they don't have Futura, they will see Arial */
+    font-family: 'Segoe UI', Futura, Arial;
+}
+
+a {
+    /* remove text-decoration */
+    text-decoration: none;
+}
+
+p {
+    /* line height of 2 - spacing between lines */
+    line-height: 2;
+    /* family font */
+    font-family: monospace;
+}
