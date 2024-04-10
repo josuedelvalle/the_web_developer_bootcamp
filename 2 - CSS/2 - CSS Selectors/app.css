@@ -1,0 +1,90 @@
+/* 
+Universal selector:
+- Selects all elements on the page
+- It is not commonly used
+- Syntax: *
+- Example: * { margin: 0; padding: 0; }
+
+Element selector:
+- Selects all elements of a specific type
+- For example, all <h1> elements; p; img; etc.
+
+Selector list:
+- Selects all elements that match any of the selectors in the list
+- Syntax: selector1, selector2, selector3
+- We can use the comma to select multiple elements
+- Example: h1, h2, h3 { color: red; }
+*/
+
+/* 
+ID Selector:
+- ID is a unique identifier for an element.
+- It is used in HTML to identify an element, and we can use it in CSS to style that element.
+- Keep them to a minimum, and use them only when necessary. There are more strategies and approaches to styling elements.
+
+- Selects an element with a specific ID
+- Syntax: #id
+- Example: #main { color: red; }
+*/
+
+/*
+Class Selector:
+- Selects all elements with a specific class attribute
+- By defining a class, you can apply the same style to multiple elements.
+
+- We can use the class attribute to apply the same style to multiple elements
+- You will have group of things/elements that you want to style in the same way. You can use the class attribute to apply the same style to multiple elements.
+
+- The difference between ID and class is that an ID can only be used once in a document, while a class can be used multiple times.
+- You will use classes more often than IDs. But both are important.
+
+- Syntax: .class
+- Example: .main { color: red; }
+
+REMEMBER --> ID with '#' and class with '.'
+*/
+
+
+/* ----------------------------------- */
+
+/* Universal selector */
+/*  
+* {
+    color: black;
+    background-color: cyan;
+} 
+*/
+
+/* Element selector: body */
+body {
+    background-color: #f1faee;
+}
+
+/* Element selector: button */
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+/* List selector: h1 and h2 */
+h1, h2 {
+    color: #1d3557;
+}
+
+/* ID selector: #signup (Sign Up button) */
+#signup {
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+/* Element selector: span */
+span {
+    color: #457b9d;
+}
+
+/* Class selector: .tag - select all elements with the class tag */
+.tag {
+    color: #f1faee;
+    background-color: #e63946;
+    font-size: 16px;
+}

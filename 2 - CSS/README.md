@@ -34,3 +34,7 @@ The CSS content is divided into these sections:
 1. [The very basics](/2%20-%20CSS/1%20-%20The%20very%20basics/)
 
    > Basic CSS Syntax | Including Style Correctly | Color Systems | Common Text Properties | Font-Family Property
+
+2. [The World of CSS Selectors](/2%20-%20CSS/2%20-%20CSS%20Selectors/)
+
+   > Universal and Element Selectors | ID Selector | Class Selector | Descendant Selector | Adjacent and Direct-Descendant Selector | Attribute Selector | Pseudo Elements | CSS Cascade | CSS Specificity | Inline Styles and Important | CSS Inheritance
