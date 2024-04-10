@@ -44,6 +44,25 @@ Class Selector:
 REMEMBER --> ID with '#' and class with '.'
 */
 
+/*
+Descendant Selector:
+- Selects an element that is a descendant of another element
+- Syntax: selector1 selector2
+- Example: div p { color: red; } - selects all <p> elements inside a <div> element
+*/
+
+/*
+Adjacent Selector:
+- Selects an element that is directly adjacent to another element
+- Syntax: selector1 + selector2
+- Example: h2 + p { color: red; } - selects the first <p> element that is placed immediately after an <h2> element
+
+Direct Child Selector:
+- Selects an element that is a direct child of another element
+- Syntax: selector1 > selector2
+- Example: div > p { color: red; } - selects all <p> elements that are direct children of a <div> element
+*/
+
 
 /* ----------------------------------- */
 
@@ -87,4 +106,31 @@ span {
     color: #f1faee;
     background-color: #e63946;
     font-size: 16px;
+}
+
+/* Descendant selector: .post a
+selects all <a> elements inside the .post class */
+.post a {
+    color: #457b9d;
+}
+/* Descendant selector: .footer a
+selects all <a> elements inside the .footer class */
+footer a {
+    color: #e63946;
+}
+
+/* Adjacent selector: input + button 
+selects the button that is placed immediately after an input element */
+input + button {
+    background-color: pink;
+}
+/* select the button that is placed immediately after an h2 element */
+h2 + button {
+    font-size: 15px;
+}
+
+/* Direct child selector: footer > a */
+/* selects all <a> elements that are DIRECT children of a <footer> element */
+footer > a {
+    color: #1d3557;
 }

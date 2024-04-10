@@ -20,20 +20,25 @@
     </nav>
     <main>
         <h1>Popular Posts</h1>
-        <section>
+        <!--
+            Somestimes it makes sense to set classes on the parent element of a 
+            group of elements, and then use the class to style the children with
+            descendant selectors.
+        -->
+        <section class="post">
             <span>Posted by <a href="#213adas">/u/not_funny</a></span>
             <!-- Add 'class' to the h2 tag so we can use it in the CSS. Classes can be used multiple times -->
             <h2>Lol look at this hilarious meme <span class="tag">funny</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
-        <section>
+        <section class="post">
             <span>Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
             <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
-        <section>
+        <section class="post">
             <span>Posted by <a href="#981adas">/u/dogfan</a></span>
             <h2>This Corgi got some good stuff from the vet. <span class="tag">dogs</span></h2>
             <button>+Vote</button>
@@ -57,6 +62,8 @@
                 </li>
             </ul>
         </nav>
+        <!-- This anchor is a direct descendent of the footer -->
+        <a href="#license">Content is available under these licenses.</a>
     </footer>
 
 </body>
