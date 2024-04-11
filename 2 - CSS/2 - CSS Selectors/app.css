@@ -63,6 +63,54 @@ Direct Child Selector:
 - Example: div > p { color: red; } - selects all <p> elements that are direct children of a <div> element
 */
 
+/*
+Attribute Selector:
+- Selects an element based on its attribute
+- Example of attributes: href, src, alt, title, type, class, id, etc.
+
+- We can select elements with a specific value for an attribute
+- Syntax: [attribute="value"]
+- Example: [type="text"] { color: red; } - selects all elements with a type attribute equal to "text"
+
+- We can also select elements with an attribute containing a specific value
+- Syntax: [attribute*="value"]
+- Example: [href*="google"] { color: red; } - selects all elements with an href attribute containing "google"
+
+- We can also select elements with an attribute starting with a specific value
+- Syntax: [attribute^="value"]
+- Example: [href^="https"] { color: red; } - selects all elements with an href attribute starting with "https"
+
+- We can also select elements with an attribute ending with a specific value
+- Syntax: [attribute$="value"]
+- Example: [href$=".com"] { color: red; } - selects all elements with an href attribute ending with ".com"
+*/
+
+/*
+Pseudo-class Selector:
+- Keyword added to a selector that specifies a special state of the selected element(s)
+- Syntax: selector:pseudo-class
+- Example: :active, :checked, :first, :first-child, :hover, :not(), :nth-child(), :nth-of-type(), :visited, ...
+
+- :hover - selects an element when you mouse over it
+    Have a different style when you hover over it, for example, change the color of the text 
+
+- :active - selects an element when it is being activated by the user
+    When you click on a button (but you haven't released the mouse yet), 
+    the button will have a different style
+
+- :checked - selects an input element that is checked
+    When you check a checkbox, the style of the checkbox will change
+
+- :nth-of-type() - helps us to select elements based on their position in a parent element
+    Syntax: :nth-of-type(n)
+    Example: p:nth-of-type(2) { color: red; } - selects the second <p> element in a parent element
+            if 2n, it will select every second element
+    We can select even or odd elements, just including 'even' or 'odd' in the parenthesis
+
+For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+*/
+
+
 
 /* ----------------------------------- */
 
@@ -112,6 +160,8 @@ span {
 selects all <a> elements inside the .post class */
 .post a {
     color: #457b9d;
+    font-weight: bold;
+    text-decoration: none;
 }
 /* Descendant selector: .footer a
 selects all <a> elements inside the .footer class */
@@ -133,4 +183,51 @@ h2 + button {
 /* selects all <a> elements that are DIRECT children of a <footer> element */
 footer > a {
     color: #1d3557;
+}
+
+/* Attribute selector: input[type="password"] */
+/* selects all <input> elements with a type attribute equal to "password" */
+input[type="password"] {
+    /* Now when we type in the password field, the text will be with a different color */
+    color: #7e2776;
+}
+/* Attribute selector over a class */
+/* selects all elements with a class attribute equal to "post" */
+/* It would be easier to use the class selector: .post 
+   Another way would have been section.post */
+section[class="post"] {
+    background-color: #f1faee;
+}
+/* selects all elements with a href attribute containing "google" */
+a[href*="google"] {
+    color: #457b9d;
+}
+
+/* Pseudo-class selector*/
+
+/* :hover */
+/*button:hover */
+/* change the colors of the button (that is inside the .post class) when you hover over it */
+.post button:hover {
+    background-color: #e63946;
+    color: #f1faee;
+}
+/* change the text decoration of the links when you hover over them */
+.psot a:hover {
+    text-decoration: underline;
+}
+
+/* :active */
+/* change the colors of the button (that is inside the .post class) when you click on it */
+.post button:active {
+    background-color: #457b9d;
+    color: #f1faee;
+}
+
+/* :nth-of-type() */
+/* selects the third .post class and changes its background color */
+/* 3 - selects the third element
+   3n - selects every third element */
+.post:nth-of-type(3n) {
+    background-color: #dfe8dc;
 }

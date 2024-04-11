@@ -38,3 +38,4 @@ The CSS content is divided into these sections:
 2. [The World of CSS Selectors](/2%20-%20CSS/2%20-%20CSS%20Selectors/)
 
    > Universal and Element Selectors | ID Selector | Class Selector | Descendant Selector | Adjacent and Direct-Descendant Selector | Attribute Selector | Pseudo Classes and Elements | CSS Cascade | CSS Specificity | Inline Styles and Important | CSS Inheritance
+    👉 [CSS selector exercises](/2%20-%20CSS/2%20-%20CSS%20Selectors/Exercises/)
