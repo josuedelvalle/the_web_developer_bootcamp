@@ -39,3 +39,7 @@ The CSS content is divided into these sections:
 
    > Universal and Element Selectors | ID Selector | Class Selector | Descendant Selector | Adjacent and Direct-Descendant Selector | Attribute Selector | Pseudo Classes and Elements | CSS Cascade | CSS Specificity | Inline Styles and Important | CSS Inheritance
     👉 [CSS selector exercises](/2%20-%20CSS/2%20-%20CSS%20Selectors/Exercises/)
+
+3. [The CSS Box Model](/2%20-%20CSS/3%20-%20Box%20model/)
+
+   > Box Model: Width and Height; Border and Border-Radius; Padding; Margin | Display Property | CSS Units: ems and rems
