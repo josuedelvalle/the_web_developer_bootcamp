@@ -1,0 +1,45 @@
+/*
+Inheritance:
+- Inheritance is the mechanism by which properties are applied not only to a 
+    specified element, but also to its descendants.
+- Inheritance is a key concept in CSS, providing a way to propagate property
+    values from parent elements to their children.
+- Inheritance is the reason why you can set a font-family on the body element,
+    and all headers and paragraphs will have the same font.
+- Not all properties are inherited. For example, the border property is not inherited.
+
+The inherit keyword:
+- The inherit keyword is used to specify that a property should inherit its value
+    from its parent element.
+- The inherit keyword can be used with any CSS property, and on any element.
+- The inherit keyword can be used to override the default behavior of a property.
+- The inherit keyword can be used to apply a property to an element, and to all its
+    children, even if they are nested deeper in the DOM.
+Example:
+    button, input {
+        color: inherit;
+    }
+
+For more information: https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
+*/
+
+
+body {
+    /* This color will be inherited by all elements */
+    color: purple;
+}
+
+section {
+    /* This color will be inherited by all elements inside the section */
+    color: aqua;
+}
+
+form {
+    /* This color will be inherited by all elements inside the form */
+    color: greenyellow;
+}
+
+button, input {
+    /* Using the inherit keyword to inherit the color from the parent element (form) */
+    color: inherit;
+}

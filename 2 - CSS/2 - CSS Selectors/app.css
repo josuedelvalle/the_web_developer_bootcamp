@@ -110,6 +110,80 @@ Pseudo-class Selector:
 For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 */
 
+/*
+Pseudo-element Selector:
+- Keyword added to a selector that lets you style a specific part of the selected element(s)
+- Syntax: selector::pseudo-element
+    Important: if we dont specify the selector, then it will apply to all elements
+- Example: ::after, ::before, ::first-letter, ::first-line, ::selection, ...
+
+- ::after - inserts content after the content of the selected element
+- ::before - inserts content before the content of the selected element
+- ::first-letter - selects the first letter of the text content of an element
+    For example, you can make the first letter of a paragraph bigger
+- ::first-line - selects the first line of the text content of an element
+- ::selection - selects the portion of an element that is selected by a user
+
+For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+
+The difference between pseudo-class and pseudo-element is that pseudo-class selects 
+a special state of the selected element, while pseudo-element selects a specific 
+part of the selected element.
+*/
+
+/*
+The cascade:
+- The order in which styles are applied to an element
+- The last style that is applied to an element is the one that will be used
+- For example:
+    h1 {
+        color: red;
+    }
+    h1 {
+        color: blue;
+    }
+    The color of the h1 element will be blue
+
+This also applies if we have more style sheets. The last style sheet that is loaded
+will be the one that will be used. If we have the same selector in different style sheets,
+the last one will be the one that will be used.
+*/
+
+/*
+Specificity:
+What happens when conflicting styles target the same element?
+- Specificity is the means by which browsers decide which CSS property values 
+    are the most relevant to an element and, therefore, will be applied.
+    It is a measure of how specific a given selector is.
+    The more specific a selector "wins"
+
+- The order of specificity is: 
+    1. Inline styles
+    2. ID selectors
+    3. Class selectors, attributes selectors, and pseudo-classes
+    4. Element selectors and pseudo-elements
+
+For more information: https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+*/
+
+/*
+Inline styles:
+- Styles that are applied directly to an element
+- Syntax: <element style="property: value;">
+- Example: <h1 style="color: red;">Hello World</h1>
+
+Not recommended to use inline styles. Nobody uses them.
+*/
+
+/*
+Important:
+- The !important rule is a way to make your CSS cascade in a way that is stronger than usual.
+- It is used to override other styles that are applied to an element.
+- Syntax: property: value !important;
+- Example: h1 { color: red !important; }
+
+Not recommended to use. It is better to use the cascade and specificity.
+*/
 
 
 /* ----------------------------------- */
@@ -230,4 +304,49 @@ a[href*="google"] {
    3n - selects every third element */
 .post:nth-of-type(3n) {
     background-color: #dfe8dc;
+}
+
+/* Pseudo-element selector */
+
+/* ::first-letter */
+/* selects the first letter of the h2 element and changes its size */
+h2::first-letter {
+    font-size: 50px;
+}
+
+/* ::first-line */
+/* selects the first line of the p element and changes its font color */
+p::first-line {
+    color: purple;
+}
+
+/* ::selection */
+/* selects the portion of the p element that is selected by a user */
+p::selection {
+    background-color: #fcbf49;
+}
+
+/* Cascade */
+/* 
+If we apply different styles to the same element, 
+the last one will be the one that will be used.
+*/
+h1, h2 {
+    /* Now the color of the h1 and h2 elements will be yellow */
+    color: yellow;
+}
+
+/* Specificity */
+/*
+We can see that not all the buttons are having the same style.
+
+The button that is inside the .post class will have a different style.
+This is because the .post button has a higher specificity than the button selector.
+So, the style of the .post button will be applied - more specific.
+
+In our case "Sign Up" button has an ID, so it has a higher specificity than the .post button.
+So, the style of the #signup button will be applied - more specific.
+*/
+button:hover {
+    background-color: olive;
 }

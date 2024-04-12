@@ -1,0 +1,9 @@
+/* Cascase */
+/* 
+Because we are calling this css file after the first one, 
+the styles in this file will overwrite the ones in the first file.
+*/
+h1, h2 {
+    /* Not the color of the h1 and h2 elements will be olivedrab */
+    color: olivedrab;
+}

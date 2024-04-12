@@ -8,6 +8,11 @@
 
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="app.css">
+    <!-- 
+        According to the cascade rule, the last CSS file will override the previous ones.
+        Se, we can override the previous styles with the second CSS file.
+    -->
+    <link rel="stylesheet" href="more_styles.css">
 </head>
 
 <body>
@@ -55,7 +60,12 @@
         </section>
         <section class="post">
             <span>Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
-            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span></h2>
+            <!--
+                Inline styles will override the styles in the CSS file.
+                In this case, we are using the 'style' attribute to change the color 
+                of the text of the h2 tag.
+            -->
+            <h2 style="color: coral;">Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
@@ -84,6 +94,17 @@
             <button>+Vote</button>
             <hr>
         </section>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatum omnis nam id dolores blanditiis consequatur optio quo perspiciatis quam beatae nihil similique, sapiente voluptatibus, obcaecati pariatur architecto. Soluta, perferendis!
+        Voluptas quasi labore sit aliquid consequuntur quam, omnis maxime laboriosam voluptatum, cupiditate id. Et laboriosam assumenda distinctio quidem autem ullam minima voluptatibus accusantium odio aspernatur vero, velit enim quae suscipit!
+        Eos porro amet reiciendis nesciunt excepturi nostrum perferendis id minima quibusdam possimus pariatur distinctio ut, cumque minus est illo. Facilis incidunt iste suscipit odio officiis, aliquam nam eius aliquid optio!
+        Harum, deleniti ab et quia reiciendis aut ipsam velit molestiae ipsum accusantium, vel veritatis earum. Vel illo porro modi voluptatum aperiam. Cum delectus harum, architecto impedit odit repudiandae minima a.
+        Error a magnam quisquam voluptatum ipsum in eveniet laudantium maxime autem quo, harum, cum minus architecto suscipit. Voluptate minima, ut perspiciatis accusamus atque excepturi consequatur delectus porro placeat maxime assumenda!
+        Ex illo vitae id ipsa dignissimos veniam consectetur neque nam debitis. Nesciunt dolorum molestiae consectetur iste exercitationem consequatur debitis ab tempore suscipit dicta non, architecto neque modi ratione, praesentium explicabo.
+        Accusamus, ut ipsa. Unde possimus fuga sed perferendis dolorum, error laborum incidunt qui aut eos deserunt facere ut quaerat, fugit saepe, iste ipsam vitae. Praesentium similique aspernatur facere temporibus esse!
+        Hic, obcaecati eveniet laudantium a iste eum dolor ea nisi omnis officiis doloribus deserunt aliquid, corrupti eaque? Reprehenderit iste animi distinctio numquam exercitationem debitis deserunt, expedita quasi, accusantium, sequi iusto.
+        Vel molestiae neque necessitatibus a quia, inventore maxime ducimus corrupti quos cupiditate cum cumque repellat. Aut corporis nulla ea, eos quo aliquid labore? Tenetur, repellat quo. Debitis inventore numquam tenetur!
+        Numquam atque sequi obcaecati aut consectetur voluptate odit eum amet? Nihil, dignissimos tempora. Officia maiores harum quisquam ipsum quo quos fugiat adipisci eos perspiciatis, amet tempora ullam, et consequatur fugit.</p>
     </main>
     <footer>
         <nav>
