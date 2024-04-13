@@ -1,0 +1,127 @@
+/* 
+Box Model:
+- The box model is a very important concept, one that you must understand 
+    to be able to create layouts effectively.
+- The box model is a model that describes how the space around an element 
+    is distributed.
+- The box model consists of four parts: the content, padding, border, and margin.
+
+Content:
+- The content is the actual content of the element, such as text, images, etc.
+- The content is surrounded by padding, border, and margin.
+- The content can be set using the width and height properties.
+
+Padding:
+- The padding is the space between the content and the border.
+- The padding is used to create space around the content.
+- The padding can be set using the padding property.
+
+Border:
+- The border is the line that surrounds the padding and content.
+- The border is used to separate the content from the padding and margin.
+- The border can be set using the border property.
+
+Margin:
+- The margin is the space between the border and the surrounding elements.
+- The margin is used to create space between elements.
+- The margin can be set using the margin property.
+*/
+
+/*
+Height and Width:
+- The height and width properties are used to set the height and width of an element.
+- We can set the height and width of an element using the height and width properties.
+*/
+
+/*
+Border:
+- The border property is used to set the border of an element.
+- We can set the border of an element using the border property.
+
+There are dozens of border related properties, because there are different 
+pieces that we can control. The thickness, the style, the color, and then we
+can do that for the left, right, top, and bottom sides. Plus, we can do things like 
+rounding the corners.
+
+The most common border properties are:
+- border-width: Sets the width of the border.
+- border-style: Sets the style of the border.
+    Styles: solid, dotted, dashed, double, groove, ridge, inset, outset, none, hidden.
+    We can control the top, right, bottom, and left sides separately.
+    Example: border-top-style, border-right-style, border-bottom-style, border-left-style.
+- border-color: Sets the color of the border.
+
+Other properties:
+- box-sizing: Sets how the total width and height of an element is calculated.
+- border-left-width, border-right-width, border-top-width, border-bottom-width: Sets the width of the border on each side.
+- border-left-style, border-right-style, border-top-style, border-bottom-style: Sets the style of the border on each side.
+- border-left-color, border-right-color, border-top-color, border-bottom-color: Sets the color of the border on each side.
+- border-radius: Sets the radius of the border corners.
+    We can use pixels, but the best way is to use percentages.
+    We can control the top-left, top-right, bottom-right, and bottom-left corners separately.
+    Example: border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius.
+
+The border property:
+- The border property is a shorthand property that allows us to set the width, style, 
+    and color of the border in one declaration.
+- The border property can take up to three values: width, style, and color (in that order).
+- If we only specify one value, it will be used for all sides.
+- If we specify two values, the first value will be used for the top and bottom sides, 
+    and the second value will be used for the left and right sides.
+- If we specify three values, the first value will be used for the top side, 
+    the second value will be used for the left and right sides, and the third value 
+    will be used for the bottom side.
+- We can also use the border-top, border-right, border-bottom, and border-left properties
+    to set the border of each side separately.
+
+For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/border
+Types of border style: https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+Border radius: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+*/
+
+
+/* ---------------------------- */
+
+div {
+    /* Set the width and height of the element */
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    width: 100px;
+    background-color: pink;
+}
+
+#one {
+    color: white;
+    background-color: #e5989b;
+    /* Set the border of the element */
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    /* With box-sizing: border-box; the border will be included in the width and height,
+    so the div will still be 200px by 200px. If we dont include this property, the border
+    will be added to the width and height, so the div will be 210px by 210px. */
+    box-sizing: border-box;
+}
+
+#two {
+    background-color: #b5838d;
+    border-color: #ffcdb2;
+    border-width: 3px;
+    border-style: dashed;
+    /* We can modify the border of each side separately */
+    border-left-width: 8px;
+}
+
+#three {
+    background-color: #6d6875;
+    /* Border property: width, style, color 
+    It is the same as setting border-width, border-style, and border-color separately */
+    border: 4px solid black;
+    border-left-style: dotted;
+    /* Border radius */
+    /* We can control the corners separately: top-left, top-right, bottom-right, bottom-left */
+    border-radius: 10% 30%;
+}

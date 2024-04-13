@@ -1,0 +1,18 @@
+/* YOUR CODE GOES IN HERE */
+
+div {
+    width: 210px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    /* text-align: center - center text */
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    border-width: 5px;
+    border-color: rgb(236, 183, 191);
+    border-style: solid;
+    /* border-radius: 50% - circle */
+    border-radius: 50%;
+}
