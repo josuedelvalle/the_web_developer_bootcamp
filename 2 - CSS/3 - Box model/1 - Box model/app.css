@@ -79,8 +79,52 @@ Types of border style: https://developer.mozilla.org/en-US/docs/Web/CSS/border-s
 Border radius: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
 */
 
+/*
+Padding:
+- The padding is the space between the content and the border.
+    It is used to create space around the content.
+- We can set the padding of an element using the padding property.
+    + The padding property can take up to four values: top, right, bottom, and left.
+    + If we only specify one value, it will be used for all sides.
+    + If we specify two values, the first value will be used for the top and bottom sides, 
+        and the second value will be used for the left and right sides.
+    + If we specify three values, the first value will be used for the top side,
+        the second value will be used for the left and right sides, and the third value 
+        will be used for the bottom side.
+- We can also use the padding-top, padding-right, padding-bottom, and padding-left properties
+    to set the padding of each side separately.
+
+For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+*/
+
+/*
+Margin:
+- The margin is the space between the border and the surrounding elements.
+    It is used to create space between elements.
+- We can set the margin of an element using the margin property.
+    + The margin property can take up to four values: top, right, bottom, and left.
+    + If we only specify one value, it will be used for all sides.
+    + If we specify two values, the first value will be used for the top and bottom sides, 
+        and the second value will be used for the left and right sides.
+    + If we specify three values, the first value will be used for the top side,
+        the second value will be used for the left and right sides, and the third value 
+        will be used for the bottom side.
+- We can also use the margin-top, margin-right, margin-bottom, and margin-left properties
+    to set the margin of each side separately.
+
+- h1, for exmple, has margin by default, so we can remove it by setting margin: 0;
+- The body element has also margin by default. People tend to remove it by setting margin: 0;
+
+For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+*/
+
 
 /* ---------------------------- */
+
+body {
+    /* Remove the margin of the body */
+    margin: 0;
+}
 
 div {
     /* Set the width and height of the element */
@@ -89,8 +133,13 @@ div {
 }
 
 h1 {
-    width: 100px;
+    width: 200px;
     background-color: pink;
+    /* Set the padding of the element */
+    padding-left: 100px;
+    padding-top: 50px;
+    /* h1 has margin by default, so we can remove it by setting margin: 0; */
+    margin: 0;
 }
 
 #one {
@@ -104,6 +153,9 @@ h1 {
     so the div will still be 200px by 200px. If we dont include this property, the border
     will be added to the width and height, so the div will be 210px by 210px. */
     box-sizing: border-box;
+    /* Set left and bottom margin */
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
 
 #two {
@@ -113,6 +165,10 @@ h1 {
     border-style: dashed;
     /* We can modify the border of each side separately */
     border-left-width: 8px;
+    /* Set the padding of the element */
+    padding-right: 50px;
+    /* Set margin to all sides */
+    margin: 200px;
 }
 
 #three {
@@ -124,4 +180,17 @@ h1 {
     /* Border radius */
     /* We can control the corners separately: top-left, top-right, bottom-right, bottom-left */
     border-radius: 10% 30%;
+}
+
+button {
+    /* padding: apply 10px to the top and bottom, and 20px to the left and right */
+    /* If you dont want padding on the top and bottom, you can set 'padding: 0 20px;' */
+    padding: 10px 20px;
+}
+
+span {
+    margin-left: 30px;
+    /* Margin top is not working because the span is an inline element
+    We will discuss this with the display property */
+    margin-top: 30px;
 }

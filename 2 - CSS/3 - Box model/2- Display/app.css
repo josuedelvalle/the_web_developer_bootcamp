@@ -1,0 +1,103 @@
+/*
+Display property:
+- The display property specifies the display behavior (the type of rendering box) 
+    of an element. In HTML, the default display property value is taken from the HTML
+    element being used.
+- The display property is the most important CSS property for controlling layout.
+
+Principal values:
+- inline: This value causes an element to generate an inline element box.
+    + Margin and padding push elements away horizontally but not vertically.
+- block: The element generates a block element box, generating line breaks 
+    before and after the element when in the normal flow.
+    + Margin, padding, height, and width properties are respected.
+- inline-block: This value causes an element to generate an inline-level block container.
+    + The element itself is formatted as an inline element, 
+        but you can apply height and width values, and margin and padding.
+
+Other values:
+- flex: This value causes an element to generate a block-level flex container box.
+    + The element itself is a block-level element, but it can be flexed.
+    + We can use the justify-content and align-items properties to align the content.
+- none: This value causes an element to generate no box at all. With this value, 
+    the element is removed from the normal flow of the document.
+    The ekement is not deleted, but it is not visible.
+
+For more information, visit: https://developer.mozilla.org/en-US/docs/Web/CSS/display
+*/
+
+
+/* ---------------------------- */
+
+h1 {
+    background-color: palegoldenrod;
+    border: 1px solid black;
+
+    /* Display property */
+    /* Now, the h1 element will be displayed as an inline element */
+    display: inline;
+}
+
+span {
+    /* Remember that span is an inline element */
+    background-color: palevioletred;
+    border: 1px solid black;
+
+    /* Height and width properties */
+    /* If do not apply the display property, the height and width properties will not work */
+    width: 100px;
+    /* We can see that the text is not centered -- we need to apply the display property 
+    with the inline-block value */
+    height: 40px;
+
+    /* Padding property */
+    /* Padding will work even if the display property is not applied */
+    padding: 10px;
+
+    /* Margin property */
+    /* Margin will be ignored vertically unless we apply the display property */
+    margin: 10px;
+
+    /* Display property */
+    /* Now, the span element will be displayed as a block element */
+    display: block;
+}
+
+#another_span {
+    background-color: paleturquoise;
+    border: 1px solid black;
+    /* Height and width properties */
+    width: 100px;
+    height: 40px;
+    /* Padding property */
+    padding: 10px;
+    /* Margin property */
+    margin: 10px;
+    /* Display property */
+    /* With the display flex property, we can align the content */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+div {
+    /* Remember that div is a block element */
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 5px solid black;
+    margin: 16px;
+
+    /* Display property */
+    /* Now, the div element will be displayed as an inline-block element */
+    /* If we set the display property to inline, the height and width properties will not be respected */
+    display: inline-block;
+}
+
+h2 {
+    background-color: lightcoral;
+    border: 1px solid black;
+    /* Display property */
+    /* We can remove the element from the normal flow of the document */
+    display: none;
+}
