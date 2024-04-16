@@ -27,16 +27,55 @@ from the element itself.
     - line-height: 40% (40% of the element's font-size)
 */
 
+/*
+em:
+- em's are a relative unit of measurement.
+- With font-size, 1em equals the font-size of the parent element. 
+2em would equal twice the size of the parent element's font-size.
+- With other properties, 1em is equal to the font-size of the current element.
+    + padding, margin, width, height, etc.
+- Example:
+    - font-size: 1.5em (1.5 times the font-size of the parent element)
+    - width: 20em (20 times the font-size of the current element)
+    - margin-top: 2em (2 times the font-size of the current element)
+
+With em we can proportionally scale our elements. With pixels, we can't do that.
+If we change the font-size of the parent element, all the children will change as well.
+So, if we use em, we can keep things relative to the font-size of the parent element.
+*/
+
+/*
+rem:
+- rem's are relative to the font-size of the root html element.
+- Often easier to work with.
+- Example:
+    - font-size: 1.5rem (1.5 times the font-size of the root element)
+    - width: 20rem (20 times the font-size of the root element)
+    - margin-top: 2rem (2 times the font-size of the root element)
+
+The difference between em and rem is that em is relative to the font-size 
+of the parent element, while rem is relative to the font-size of the root element.
+
+So, if your root HTML element has a font-size of 16px, 1rem will be equal to 16px, 
+no matter where you use it in your CSS.
+*/
+
 
 /* ---------------------------- */
 
-section {
+
+html {
+    /* This is the root font-size */
+    font-size: 20px;
+}
+
+#percentages {
     background-color: #6d6875;
     width: 400px;
     height: 800px;
 }
 
-div {
+#percentages div {
     background-color: #e5989b;
     /* Percentage - relative unit */
     /* width/: 70% - 70% of the parent's width (section) */
@@ -51,4 +90,69 @@ h1 {
     /* Percentage - relative unit */
     /* line-height: 200% - 200% of the font-size element = 80px */
     line-height: 200%;
+}
+
+#ems {
+    /* parent element of h2, h3, button, p, and ul */
+    font-size: 15px;
+}
+
+#ems h2 {
+    /* h2 will have a font-size of 2em * 15px (article) = 30px
+    because h2 is a child of article */
+    /* If we change the font-size of article, h2 will change as well accordingly */
+    font-size: 2em;
+
+    /* margin-left: 1em - 1 times the font-size of the current element = 15px */
+    margin-left: 1em;
+}
+
+#ems h3 {
+    /* h3 will have a font-size of 1.5em * 15px (article) = 22.5px */
+    font-size: 1.5em;
+}
+
+button {
+    /* button will have a font-size of 1em * 15px (article) = 15px */
+    font-size: 1em;
+    /* padding: 0 1em - 0 top/bottom padding and 1 times the font-size of the current element = 15px */
+    padding: 0 1em;
+    /* border-radius: 0.5em - 0.5 times the font-size of the current element = 7.5px */
+    border-radius: 0.5em;
+
+    background-color:  #2a9d8f;
+    color: white;
+}
+
+#ems p {
+    /* p will have a font-size of 0.8em * 30px (article) = 24px */
+    font-size: 0.8em;
+}
+
+#ems ul {
+    /* em - nested ul */
+    /* If we use em here, we will undesirable font-size scaling with
+    the nested li elements.
+    In this case with 1.5em, the font-size will increase with each nested ul */
+    font-size: 1.5em;
+}
+
+#rems h2 {
+    /* h2 will be three times whatever the root font-size is */
+    font-size: 3rem;
+}
+
+#rems h3 {
+    /* h3 will be double whatever the root font-size is */
+    font-size: 2rem;
+}
+
+#rems ul{
+    /* no matter how many nested uls we have, the font-size will always be 0.8rem */
+    font-size: 0.8rem;
+}
+
+#rems button {
+    /* button will be 1.5 times whatever the root font-size is */
+    font-size: 1.5rem;
 }
