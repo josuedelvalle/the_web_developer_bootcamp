@@ -43,3 +43,7 @@ The CSS content is divided into these sections:
 3. [The CSS Box Model](/2%20-%20CSS/3%20-%20Box%20model/)
 
    > Box Model: Width and Height; Border and Border-Radius; Padding; Margin | Display Property | CSS Units: ems and rems
+
+4. [Other Assorted Useful CSS Properties](/2%20-%20CSS/4%20-%20Other%20CSS%20properties/)
+
+   > Opacity & Alpha Channel | Position | Transitions | Transforms | Background | Google Fonts

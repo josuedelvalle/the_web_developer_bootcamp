@@ -1,0 +1,48 @@
+/*
+Alpha Channel:
+It is a value between 0 and 1. 0 means fully transparent and 1 means fully opaque.
+It indicates how see-through is the color.
+Example:
+    rgba: rgba(0, 0, 0, 0.5) -> 50% transparent black
+    hex: #00000080 -> 50% transparent black
+        - the last two digits represent the alpha channel in hex. 
+        - 00 to FF: 00 is fully transparent and FF is fully opaque.
+*/
+
+/*
+Opacity:
+Is is not a piece of a color or a channel like rgba.
+It is a property that applies to the whole element.
+It governs the transparency of the whole element, including its children.
+It is a value between 0 and 1. 0 means fully transparent and 1 means fully opaque.
+Example:
+    opacity: 0.5 -> 50% transparent
+*/
+
+
+/* ---------------------------- */
+
+section {
+    width: 500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+#rgba {
+    /* set width and height to 50% of the parent (section) */
+    width: 50%;
+    height: 50%;
+    /* alpha channel: 50% transparent white */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#opacity {
+    /* set width and height to 50% of the parent (section) */
+    width: 50%;
+    height: 50%;
+    /* set background color */
+    background-color: yellow;
+    /* set opacity to 50% */
+    /* this applies to the whole id="opacity" element, including its children */
+    opacity: 0.5;
+}

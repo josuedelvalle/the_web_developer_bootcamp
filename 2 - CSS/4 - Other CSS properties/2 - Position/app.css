@@ -1,0 +1,99 @@
+/*
+Position CSS property:
+It is used to set the position of an element in the document.
+It establisehes how four other properties (top, right, bottom, left) are interpreted.
+
+For documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/position
+*/
+
+/*
+Position values:
+
+- static: default value. The element is positioned according to the normal 
+flow of the document.
+
+- relative: The element is positioned according to the normal flow of the 
+document, and then offset relative to itself based on the values of top, right, 
+bottom, and left.
+
+- absolute: The element is removed from the normal document flow, and no 
+space is created for the element in the page layout. It is positioned relative 
+to its closest positioned ancestor if any; otherwise, it is placed relative to 
+the initial containing block.
+
+- fixed: The element is removed from the normal document flow, and no space is
+created for the element in the page layout. It is positioned relative to the
+initial containing block established by the viewport, except when one of its
+ancestors has a transform, perspective, or filter property set to something
+other than none, in which case that ancestor is used as the containing block.
+    + The element will be positioned relative to the viewport (the browser window)
+    and will not move when the page is scrolled 
+    + It is similar to the absolute value, but it is always relative to the viewport.
+    + It is useful for elements that should always be visible on the screen, like a
+    sticky navigation bar.
+
+- sticky: The element is treated as relative until it crosses a specified threshold,
+at which point it is treated as fixed. The threshold is defined by the top, right,
+bottom, and left properties.
+    + It is similar to the relative value, but it is always relative to the viewport.
+    + It is useful for elements that should stick to the top or bottom of the screen
+    when scrolling.
+    + The element is not fixed until it reaches the top or bottom of the viewport.
+
+We can set negative values for top, right, bottom, left to move the element in 
+the opposite direction.
+*/
+
+/* ---------------------------- */
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    /* adds space around the element */
+    margin: 10px; 
+    /* makes the element behave like an inline element but with block properties */
+    display: inline-block; 
+}
+
+#middle {
+    background-color: #81b29a;
+}
+
+/* select the id middle that is descendant of the id static */
+#static #middle {
+    /* default value for position */
+    position: static;
+}
+
+#relative #middle {
+    /* relative position */
+    position: relative;
+    /* top, right, bottom, left will offset the element from its current position */
+    top: 50px; /* moves the element 50px down */
+    left: 50px; /* moves the element 50px to the right */
+}
+
+#absolute {
+    position: relative;
+}
+
+#absolute #middle {
+    /* absolute position */
+    position: absolute;
+    /* top, right, bottom, left will offset the element from its closest positioned ancestor */
+    /* if there is no positioned ancestor, it will be positioned relative to the initial containing block */
+    /* in this case, the closest positioned ancestor is the div with the id absolute */
+    top: 20px; /* moves the element 20px down */
+    left: 30px; /* moves the element 30px to the right */
+}
+
+#fixed #middle {
+    /* fixed position */
+    /* the element will be positioned relative to the viewport (the browser window)
+    and will not move when the page is scrolled */
+    position: fixed;
+    /* top, right, bottom, left will offset the element from the viewport */
+    top: 50px; /* moves the element 50px to the down */
+}
