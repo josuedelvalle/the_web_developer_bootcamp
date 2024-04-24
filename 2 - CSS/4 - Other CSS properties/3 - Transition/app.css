@@ -1,0 +1,122 @@
+/*
+Transitions:
+
+Transitions are a way to change property values smoothly (over a given duration). 
+They are triggered when a property changes value. 
+They are defined using the transition property.
+
+Example:
+    transition: 1s; // 1s is the duration of the transition
+
+The transition property can take multiple values:
+    PROTERY NAME | DURATION | TIMING FUNCTION | DELAY
+    - transition-property: the property to transition
+    - transition-duration: the duration of the transition
+    - transition-timing-function: the timing function to use
+    - transition-delay: the delay before the transition starts
+
+Example:
+    // transition the background-color property over 1s with an ease-in-out 
+    // timing function and a 0.5s delay
+    transition: background-color 1s ease-in-out 0.5s; 
+*/
+
+/*
+some timing functions:
+    - ease: slow at the beginning, fast in the middle, slow at the end
+    - ease-in: slow at the beginning
+    - ease-out: slow at the end
+    - ease-in-out: slow at the beginning and end
+    - linear: constant speed
+    - cubic-bezier: custom function
+        + cubic-bezier(0.1, 0.7, 1.0, 0.1) - the four values are the control points
+        + examples: https://easings.net/
+
+documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing
+*/
+
+/*
+IMPORTANT:
+
+Definitely single out the properties you want to transition, do not just
+transition all properties, because evventualy you'll make some changer
+to your code, and suddenly you end up with transitions you are not 
+anticipating, your are not expecting.
+*/
+
+/* ------------------- */
+
+.circle {
+    width: 300px;
+    height: 300px;
+    background-color: magenta;
+
+    /* with transition we can change the property values smoothly */
+    /* transition: 1s; --> this will transition all properties */
+    /* transition: all 1s; --> this will also transition all properties */
+
+    /* only the background-color property will be transitioned 
+    with a delay of 1s */
+    /* transition: background-color 2s; */
+
+    /* apply a delay of 1s */
+    /* transition: background-color 1.5s 1s; */
+
+    /* apply transition to more than one property */
+    transition: background-color 1s ease-in, border-radius 2s;
+}
+
+.circle:hover {
+    /* remember: the hover pseudo-class is triggered when the mouse is over the element */
+    background-color: cyan;
+    /* when we hover we will have a circle */
+    border-radius: 50%;
+}
+
+
+ section div {
+    height: 100px;
+    width: 100px;
+    background-color: turquoise;
+
+    /* set margin top and left to 20px and 0px to left and right */
+    margin: 20px 0;
+
+    /* transition the margin-left property over 3s */
+    transition: margin-left 3s;
+} 
+
+section:hover div {
+    /* when we hover the section the margin-left will be changed,
+    the div will move to the right */
+    margin-left:500px;
+}
+
+section:hover #third {
+    border-radius: 25% 30% 35% 40%;
+    background-color: salmon;
+}
+
+/* select the first div in the section */
+div:nth-of-type(1){
+    /* timing function: ease-in */
+    transition-timing-function: ease-in;
+}
+
+/* select the second div in the section */
+div:nth-of-type(2){
+    /* timing function: ease-out */
+    transition-timing-function: ease-out;
+}
+
+/* select the third div in the section */
+div:nth-of-type(3){
+    /* timing function: cubic-bezier */
+    transition: border-radius 2s, background-color 3s, margin-left 3s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+/* select the fourth div in the section */
+div:nth-of-type(4){
+    /* timing function: cubic-bezier */
+    transition-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
+}
