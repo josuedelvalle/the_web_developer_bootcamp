@@ -39,7 +39,7 @@ documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timin
 IMPORTANT:
 
 Definitely single out the properties you want to transition, do not just
-transition all properties, because evventualy you'll make some changer
+transition all properties, because eventualy you'll make some change
 to your code, and suddenly you end up with transitions you are not 
 anticipating, your are not expecting.
 */
