@@ -1,0 +1,158 @@
+/*
+Transform:
+With transform, you can move, rotate, scale, skew elements, and more.
+It's a powerful tool that can be used to create complex animations and effects.
+
+You can combine multiple transformations by separating them with spaces.
+For example, to rotate an element 45 degrees and scale it by 1.5, 
+you can use the following code:
+    - transform: rotate(45deg) scale(1.5);
+
+At the end, you can use the transform property to apply the transformation 
+to an element.
+
+For documentation, visit: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+*/
+
+/*
+Some transform functions:
+
+- rotate(angle): Rotates the element by the specified angle.
+    + Positive values rotate the element clockwise.
+    + Negative values rotate the element counterclockwise.
+    + The default unit is degrees, but you can also use radians (rad) or gradians (grad).
+    + There are various functions that allow you to rotate the element around a specific axis:
+        * rotateX(angle): Rotates the element around the x-axis.
+        * rotateY(angle): Rotates the element around the y-axis.
+        * rotateZ(angle): Rotates the element around the z-axis.
+        * rotate3d(x, y, z, angle): Rotates the element around the specified axis.
+
+- scale(x, y): Scales the element by the specified factors.
+    + If you only specify one value, the element will be scaled uniformly.
+    + If you specify two values, the first value will be applied to the x-axis, 
+        and the second value will be applied to the y-axis.
+    + There are various functions that allow you to scale the element along a specific axis:
+        * scaleX(x): Scales the element along the x-axis.
+        * scaleY(y): Scales the element along the y-axis.
+        * scaleZ(z): Scales the element along the z-axis.
+        * scale3d(x, y, z): Scales the element along the specified axes.
+
+- skew(x-angle, y-angle): Skews the element by the specified angles.
+    + If you only specify one value, the element will be skewed along the x-axis.
+    + If you specify two values, the first value will be applied to the x-axis, 
+        and the second value will be applied to the y-axis.
+    + There are various functions that allow you to skew the element along a specific axis:
+        * skewX(angle): Skews the element along the x-axis.
+        * skewY(angle): Skews the element along the y-axis.
+
+- translate(x, y): Moves the element by the specified distances.
+    + If you only specify one value, the element will be moved along the x-axis.
+    + If you specify two values, the first value will be applied to the x-axis, 
+        and the second value will be applied to the y-axis.
+    + There are various functions that allow you to move the element along a specific axis:
+        * translateX(x): Moves the element horizontally (along the x-axis).
+        * translateY(y): Moves the element vertically (along the y-axis).
+        * translateZ(z): Moves the element along the z-axis.
+        * translate3d(x, y, z): Moves the element along the specified axes.
+
+- matrix(a, b, c, d, e, f): Applies a 2D transformation matrix.
+
+- matrix3d(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p): Applies a 3D transformation matrix.
+*/
+
+
+/* ---------------- */
+
+
+h1 {
+    background-color: #2a9d8f;
+    border: 5px solid #264653;
+    color: #eae2b7;
+    padding: 0.7em;
+    width: 300px;
+    font-size: 1.8em;
+    text-align:center;
+    /* with the auto value, that element will be centered in its container */
+    margin: 20px auto;
+    font-family: Courier New;
+    font-weight: lighter;
+}
+
+h1:nth-of-type(2n) {
+    background-color: #e9c46a;
+}
+h1:nth-of-type(3n) {
+    background-color: #f4a261;
+}
+h1:nth-of-type(4n) {
+    background-color: #e76f51;
+}
+
+/* ---------------- */
+
+/* select the first h1 element in the first section */
+section:first-of-type h1:nth-of-type(1){
+    /* transform-origin is used to change the origin of the transformation */
+    /* in this case, the origin is the bottom right corner */
+    /* by default, the origin is the center of the element */
+    transform-origin: bottom right;
+
+    /* ROTATE to the right 45 degrees */
+    transform: rotate(45deg); 
+}
+
+/* select the second h1 element in the first section */
+section:first-of-type h1:nth-of-type(2){
+    /* SCALE the element by 2 on the x-axis and 0.8 on the y-axis */
+    transform: scale(2, 0.8);
+}
+
+/* select the third h1 element in the first section */
+section:first-of-type h1:nth-of-type(3){
+    /* TRANSLATE the element 200px horizontally to the right */
+    transform: translateX(200px);
+}
+
+/* select the fourth h1 element in the first section */
+section:first-of-type h1:nth-of-type(4){
+    /* TRANSLATE the element 100px horizontally to the left and 50px vertically down */
+    transform: translate(-100px, 50px);
+}
+
+/* ---------------- */
+
+/* select the first h1 element in the second section */
+section:nth-of-type(2) h1:nth-of-type(1){
+    /* SKEW the element 30 degrees along the x-axis */
+    transform: skewX(30deg);
+}
+
+/* select the second h1 element in the second section */
+section:nth-of-type(2) h1:nth-of-type(2){
+    /* SKEW the element 10 degrees along the x-axis and 25 degrees along the y-axis */
+    transform: skew(10deg, 25deg);
+}
+
+/* select the third h1 element in the second section */
+section:nth-of-type(2) h1:nth-of-type(3){
+    /* we can combine multiple transformations */
+    transform: rotate(-30deg) scale(1.2);
+}
+
+/* select the fourth h1 element in the second section */
+section:nth-of-type(2) h1:nth-of-type(4){
+    /* we can combine multiple transformations */
+    transform: translateX(-500px) rotate(180deg) scaleY(1.5);
+}
+
+/* ---------------- */
+
+/* select the second section */
+section:nth-of-type(2){
+    /* Important:
+    The transform property applies to whatever the contents are of our elements.
+    It will not only applied o the parent element but also its contents*/
+
+    /* this transformation will be applied to the entire section */
+    transform: scale(0.7);
+}
