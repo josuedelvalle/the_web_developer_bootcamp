@@ -1,0 +1,61 @@
+/*
+box-shadow: 
+it allows you to add a shadow effect to an element.
+The first two values are the horizontal and vertical offsets of the shadow, 
+the third value is the blur radius, and the fourth value is the spread radius.
+
+for documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+*/
+
+/*
+cursor:
+it allows you to change the cursor when you hover over an element.
+
+for documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+*/
+
+/* ---------------------------- */
+
+body {
+  /* select the font family - from google fonts */
+  font-family: 'Roboto', sans-serif;
+  /* center the content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background color */
+  background-color: #151b29
+}
+
+button {
+  /* border */
+  border: 2px solid;
+  border-radius: 30px;
+  /* padding between the content and the border */
+  /* remember: em is relative to the font-size of the element */
+  padding: 1em 2em;
+  /* transparent background */
+  background: none;
+  /* color */
+  color: #ffa260;
+  /* font size */
+  font-size: 1em;
+  /* add transition */
+  /* remeber: is better to specify the properties you want to transition */
+  transition: border-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* set properties for the hover state */
+button:hover {
+  /* border color */
+  border-color: #f1ff5c;
+  /* color */
+  color: white;
+  /* box shadow */
+  box-shadow: 0 0 10px 1px #f1ff5c;
+  /* transform */
+  transform: scale(1.1);
+  /* cursor */
+  cursor: pointer;
+}
