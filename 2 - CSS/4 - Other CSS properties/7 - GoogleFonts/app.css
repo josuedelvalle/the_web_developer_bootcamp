@@ -1,0 +1,63 @@
+/*
+Google Fonts
+- Google Fonts is a library of free licensed font families, 
+an interactive web directory for browsing the library, 
+and APIs for conveniently using the fonts via CSS and Android.
+
+- Google Fonts is a collection of open-source fonts that are 
+hosted on Google's servers and with their API, 
+it's easy to use them on your website.
+
+the most common ones are:
+- Roboto
+- Open Sans
+- Lato
+- Montserrat
+- Raleway
+- Merriweather
+- Playfair Display
+- Nunito
+
+- To use Google Fonts, you need to add a link to the font in the
+<head> of your HTML file:
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+website: https://fonts.google.com/
+*/
+
+
+/* ----------------------------------- */
+
+
+body {
+    /* select the font from Google Fonts */
+    /* the priority font is Montserrat, if it's not available, 
+    it will use the second font, sans-serif */
+    font-family: Montserrat, sans-serif;
+}
+
+main {
+    width: 60%;
+    /* with "auto" the margin will be the same on the left and right,
+    and the content will be centered */
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    /* remove the margin from the bottom of the header */
+    margin-bottom: 0;
+}
+
+h1 + h2 {
+    /* add a margin on the top of the header */
+    margin-top: 10px;
+}
+
+h1,h2,h3 {
+    /* change the font for the headers */
+    font-family: Roboto, sans-serif;
+    /* change the font weight. 100 is the lightest, 400 is the normal,
+    and 700 is the boldest */
+    font-weight: 100;
+}
