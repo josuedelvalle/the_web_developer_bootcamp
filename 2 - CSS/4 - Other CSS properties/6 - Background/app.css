@@ -1,0 +1,79 @@
+/*
+brackground:
+there are 8 properties in background:
+
+0. background
+    it is a shorthand property for setting all the background properties 
+    in one declaration.
+    it can be set to background-color, background-image, background-repeat, 
+    background-attachment, background-position, and background-size.
+    --> No need to follow a specific order.
+        - except for background-size, it must come after background-position,
+            separated by a slash.
+          for example, background: url() center / contain;
+
+1. background-color.
+    it is used to set the background color of an element.
+    it can be set to a color name, hex, rgb, or hsl value.
+
+2. background-image
+    it is used to set the background image of an element.
+    it allows us to set a gradient, image, or pattern.
+    --> you can find images on https://unsplash.com
+
+3. background-repeat
+
+4. background-attachment
+
+5. background-position
+    it is used to set the position of the background image.
+    it can be set to top, bottom, left, right, center, or a specific position.
+    for example, top left, top right, bottom left, bottom right, center, 50% 50%.
+        - bottom right: the background image will start from the bottom right corner.
+
+6. background-size
+    it is used to set the size of the background image.
+    it can be set to cover, contain, or a specific size.
+        - cover: the background image will cover the entire element.
+        - contain: the background image will be contained within the element.
+        - custom size: you can set the size of the background image. 
+          for example, 100px 100px.
+    you can add "no-repeat" to prevent the background image from repeating.
+
+7. background-origin
+
+8. background-clip
+
+documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/background
+*/
+
+
+/* ------------------- */
+
+section {
+    /* 80% of the viewport width */
+    width: 80%; 
+    height: 800px;
+    /* center the section */
+    margin: 0 auto;
+
+    /* set the background color */
+    /* background-color: rgb(91, 173, 140); */
+
+    /* set the background image */
+    /* background-image: url("https://images.unsplash.com/photo-1605106715994-18d3fecffb98?q=80&w=1263&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    /* set the background image size */
+    /* background-size: contain; */
+    /* set the background image position */
+    /* in this case the background image will be at the bottom right */
+    /* background-position: bottom right; */ 
+
+    /* background property */
+    /* write everything in one line */
+    background: center / 40% no-repeat  rgb(91, 173, 140) url("https://images.unsplash.com/photo-1605106715994-18d3fecffb98?q=80&w=1263&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+h1 {
+    font-size: 100px;
+    color: white;
+}
