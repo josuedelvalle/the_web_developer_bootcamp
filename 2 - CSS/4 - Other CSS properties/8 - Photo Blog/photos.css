@@ -1,0 +1,48 @@
+/*
+for the images to not be fixed in size, we can use
+percentages for the width and height of the images.
+
+with percentages, the images will be responsive and will
+adapt to the size of the screen.
+*/
+
+img {
+    /* with this, the images will take up 30% of the width of the screen
+    (the parent element), so we will have 3 images per row. */
+    width: 30%;
+
+    /*  we have 10% remaining for the margins between the images.
+    we will divide it by six - counting left and right margins of the
+    three images in the row - so we have 1.6666666666666667% for each margin. */
+    /* margin: 1.6666666666666667%; */
+
+    /* but to be honest, we can use calc() to calculate the margin
+    and make it easier to understand. */
+    margin: calc(10% / 6);
+
+    /* anyway, there are better options. later we will cover
+    the flexbox and grid layout, which are more suitable for
+    this kind of layout. */
+}
+
+/* ---------------------------- */
+
+nav {
+    /* set font */
+    font-family: "Inter", "Roboto", sans-serif;
+    font-size: 1.5em;
+
+    /* we can use the text-transform property to make the text uppercase. */
+    text-transform: uppercase;
+    /* set border bottom to the nav */
+    border-bottom: 2px solid #f1f1f1;
+    
+    /* we can add margin so it is align with the images */
+    margin-left: calc(10% / 6);
+    /* the same with the width */
+    width: calc(100% - 2 * calc(10% / 6));
+
+    /* we can also add padding to the nav, so the text is not
+    too close to the border. */
+    padding: 1em 0;
+}
