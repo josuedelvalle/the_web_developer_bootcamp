@@ -47,3 +47,7 @@ The CSS content is divided into these sections:
 4. [Other Assorted Useful CSS Properties](/2%20-%20CSS/4%20-%20Other%20CSS%20properties/)
 
    > Opacity & Alpha Channel | Position | Transitions | Transforms | Background | Google Fonts
+
+5. [Responsive CSS & Flexbox](/2%20-%20CSS/5%20-%20Flexbox%20and%20responsive/)
+
+   > Flexbox: Flex-Direction, Justify-Content, Flex-Wrap, Align-Items, Align-Content, Align-Self, Flex-Basis, Grow, Shrink, Flex Shorthand | Media Queries

@@ -1,0 +1,96 @@
+/*
+Flexbox
+
+- Flexbox is a layout mode that provides for the arrangement of elements 
+on a page such that the elements behave predictably when the page layout 
+must accommodate different screen sizes and different display devices.
+
+- Flexbox is a one-dimensional layout method for laying out items in rows
+or columns. Items flex to fill additional space and shrink to fit into
+smaller spaces.
+
+Important:
+Focus on concepts, not memorizing the properties!
+
+Documentation:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+*/
+
+/*
+First step to create a flexbox layout --> display: flex;
+- flex: enables a flex context for all its direct children.
+  this is the first step to make a flexbox layout. with this property
+  we are basically turning it on.
+*/
+
+/*
+The Flex Model:
+- Main Axis: the main axis of a flex container is the primary axis along
+  which flex items are laid out. The main axis is defined by the flex-direction
+  property.
+- Cross Axis: the axis perpendicular to the main axis is called the cross axis.
+  Its direction depends on the main axis direction.
+*/
+
+/*
+Flexbox properties:
+
+- flex-direction: row | row-reverse | column | column-reverse;
+  - this property defines the direction in which the children of the
+    container are placed.
+  - row: default value. items are placed the same as the text direction.
+  - row-reverse: items are placed opposite to the text direction.
+  - column: items are placed top to bottom.
+  - column-reverse: items are placed bottom to top.
+
+- justify-content: flex-start | flex-end | center | space-between | space-around;
+    - this property aligns the children of a container.
+    - justify-content is not horizontal or vertical, it can be either
+        depending on the flex-direction. The way it behaves depends on the
+        main axis.
+    - flex-start: default value. Items are placed at the start of the container. 
+    - flex-end: items are placed at the end of the container.
+    - center: items are centered in the container.
+    - space-between: items are evenly distributed in the container.
+    - space-around: items are evenly distributed in the container, with
+        space around them.
+    - space-evenly: items are distributed so that the spacing between any
+        two items (and the space to the edges) is equal.
+*/
+
+
+/* ------------------- */
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 1200px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+
+    /* this allows the children (div) to be displayed in a flex context */
+    display: flex;
+
+    /* set flex-direction to column, instead of the default row */
+    /* look that the size of the divs is adapted to the container,
+    they are not 200x200px anymore */
+    flex-direction: column;
+
+    /* center the children in the container */
+    /* this gives each div the same space around them */
+    justify-content: space-around;
+}
+
+#container div {
+    width: 200px;
+    height: 200px;
+}
