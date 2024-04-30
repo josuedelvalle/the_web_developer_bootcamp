@@ -56,6 +56,27 @@ Flexbox properties:
         space around them.
     - space-evenly: items are distributed so that the spacing between any
         two items (and the space to the edges) is equal.
+
+- flex-wrap: nowrap | wrap | wrap-reverse;
+    - this property defines whether the children are forced into a single
+        line or can be wrapped onto multiple lines.
+    - example use case: when the children are too big to fit in the container.
+    - nowrap: default value. all items are on one line.
+    - wrap: items wrap onto multiple lines.
+    - wrap-reverse: items wrap onto multiple lines in reverse.
+
+- align-items: flex-start | flex-end | center | baseline | stretch;
+    - this property aligns the children of a container.
+    - align-items is not horizontal or vertical, it can be either
+        depending on the flex-direction. The way it behaves depends on the
+        cross axis. It is going to distribute the children in the cross axis.
+          + justify-content: main axis
+          + align-items: cross axis
+    - flex-start: items are placed at the start of the cross axis.
+    - flex-end: items are placed at the end of the cross axis.
+    - center: items are centered in the cross axis.
+    - baseline: items are aligned such as their baselines align.
+    - stretch: items are stretched to fit the container.
 */
 
 
@@ -73,7 +94,8 @@ h1 {
 #container {
     background-color: #003049;
     width: 90%;
-    height: 1200px;
+    /* height: 1200px; */
+    height: 500px;
     margin: 0 auto;
     border: 5px solid #003049;
 
@@ -83,11 +105,28 @@ h1 {
     /* set flex-direction to column, instead of the default row */
     /* look that the size of the divs is adapted to the container,
     they are not 200x200px anymore */
-    flex-direction: column;
+    /* flex-direction: column; */
+
+    /* set flex-direction to row - default value */
+    flex-direction: row;
 
     /* center the children in the container */
     /* this gives each div the same space around them */
-    justify-content: space-around;
+    /* justify-content: space-around; */
+
+    /* center the children in the container */
+    justify-content: center;
+
+    /* wrap the children onto multiple lines */
+    /* this will make the divs wrap onto multiple columns */
+    /* flex-wrap: wrap; */
+    
+    /* align the children in the cross axis */
+    /* this will place the children at the end of the container */
+    align-items: flex-end;
+    /* if we do wrap-reverse, the children will be placed at the 
+    start of the container, because the cross axis is now reversed */
+    flex-wrap: wrap-reverse;
 }
 
 #container div {
