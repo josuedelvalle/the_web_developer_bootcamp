@@ -77,6 +77,58 @@ Flexbox properties:
     - center: items are centered in the cross axis.
     - baseline: items are aligned such as their baselines align.
     - stretch: items are stretched to fit the container.
+
+- align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+    - this property aligns the children of a container when there is extra space
+        in the cross axis, but only when we have multiple rows or columns.
+    - align-content is not horizontal or vertical, it can be either
+        depending on the flex-direction. The way it behaves depends on the
+        cross axis.
+    - flex-start: items are placed at the start of the cross axis.
+    - flex-end: items are placed at the end of the cross axis.
+    - center: items are centered in the cross axis.
+    - space-between: items are evenly distributed in the cross axis.
+    - space-around: items are evenly distributed in the cross axis, with
+        space around them.
+    - stretch: items are stretched to fit the container.
+
+- align-self: flex-start | flex-end | center | baseline | stretch;
+    - this property allows the default alignment (or the one specified by align-items)
+        to be overridden for individual flex items.
+    - similar to align-items, but it is for individual items.
+    - flex-start: items are placed at the start of the cross axis.
+    - flex-end: items are placed at the end of the cross axis.
+    - center: items are centered in the cross axis.
+    - baseline: items are aligned such as their baselines align.
+    - stretch: items are stretched to fit the container.
+*/
+
+/*
+Flex Sizing Properties:
+
+- flex-grow: number;
+    - this property specifies how much a flex item will grow relative to the
+        rest of the flex items.
+    - default value is 0.
+    - if all items have flex-grow set to 1, the remaining space in the container
+        will be distributed equally to all children.
+    - if one of the children has a value of 2, it will get twice as much space
+        as the others.
+
+- flex-shrink: number;
+    - this property specifies how much a flex item will shrink relative to the
+        rest of the flex items.
+    - default value is 1.
+    - if all items have flex-shrink set to 1, when the container is too small,
+        all items will shrink at the same rate.
+    - if one of the children has a value of 0, it will not shrink.
+
+- flex-basis: length | auto;
+    - this property specifies the initial size of a flex item, before any
+        available space is distributed according to the flex factors.
+    - default value is auto.
+    - if set to 0, the item will not grow.
+    - if set to auto, the item will grow.
 */
 
 
@@ -95,7 +147,7 @@ h1 {
     background-color: #003049;
     width: 90%;
     /* height: 1200px; */
-    height: 500px;
+    /* height: 500px; */
     margin: 0 auto;
     border: 5px solid #003049;
 
@@ -126,10 +178,54 @@ h1 {
     align-items: flex-end;
     /* if we do wrap-reverse, the children will be placed at the 
     start of the container, because the cross axis is now reversed */
-    flex-wrap: wrap-reverse;
+    /* flex-wrap: wrap-reverse; */
+
+    /* align the children in the cross axis */
+    /* this only works when we have multiple rows or columns - wrap */
+    /* align-content: space-between; */
 }
 
 #container div {
     width: 200px;
     height: 200px;
+
+    /* we can set a maximum width for the divs, 
+    so they don't grow too much. You can also set min-width to prevent
+    the divs from shrinking too much */
+    /* max-width: 300px; */
+    
+    /* flex-basis will set the initial size of the div */
+    /* now the divs will have a width of 400px, even if the width is 200px */
+    /* flex-basis: 400px; */
+
+    flex-basis: 600px;
+
+    /* flex-grow will make the divs grow */
+    /* now the divs will take up all the extra space */
+    /* flex-grow: 1; */
+}
+
+/* we can use align-self to align individual items */
+/* div:nth-of-type(3){
+    align-self: center;
+} 
+div:nth-of-type(2){
+  align-self: flex-start;
+} */
+
+/* we can use flex-grow to make one of the divs grow */
+/* now the first div will take up all the extra space,
+so there is no free space left */
+div:nth-of-type(1){
+    flex-grow: 1;
+    
+    /* flex-shrink will make the div shrink */
+    /* now the first div will shrink if the container is too small */
+    /* if we set a larger value, the div will shrink even faster */
+    flex-shrink: 2;
+}
+div:nth-of-type(5){
+  /* with flex-grow: 2, the last div will take up twice as much space
+  as the divs with flex-grow: 1 */
+  flex-grow: 2;
 }

@@ -50,4 +50,4 @@ The CSS content is divided into these sections:
 
 5. [Responsive CSS & Flexbox](/2%20-%20CSS/5%20-%20Flexbox%20and%20responsive/)
 
-   > Flexbox: Flex-Direction, Justify-Content, Flex-Wrap, Align-Items, Align-Content, Align-Self, Flex-Basis, Grow, Shrink, Flex Shorthand | Media Queries
+   > Flexbox: Flex-Direction, Justify-Content, Flex-Wrap, Align-Items, Align-Content, Align-Self, Flex-Basis/Grow/Shrink, Flex Shorthand | Media Queries
